@@ -1,10 +1,13 @@
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { ArrowRight, BarChart2, Bot, TrendingUp } from 'lucide-react';
+import AuditRequestForm from './AuditRequestForm';
 
 const HeroSection = () => {
   const elementsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -45,9 +48,19 @@ const HeroSection = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 pt-2 reveal">
-                <Button className="bg-blue-600 text-white hover:bg-blue-700 rounded-full px-6 py-6 text-base shadow-lg transition-all">
-                  Get a Free Audit <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
+                <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+                  <DialogTrigger asChild>
+                    <Button className="bg-blue-600 text-white hover:bg-blue-700 rounded-full px-6 py-6 text-base shadow-lg transition-all">
+                      Get a Free Audit <ArrowRight className="ml-2 h-5 w-5" />
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="sm:max-w-md">
+                    <DialogHeader>
+                      <DialogTitle className="text-2xl font-bold text-center mb-2">Request Your Free Marketing Audit</DialogTitle>
+                    </DialogHeader>
+                    <AuditRequestForm />
+                  </DialogContent>
+                </Dialog>
                 <Button variant="outline" className="border-gray-300 rounded-full px-6 py-6 text-base transition-all hover-card-animation">
                   View Our Work
                 </Button>
