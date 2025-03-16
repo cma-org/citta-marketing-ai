@@ -1,39 +1,46 @@
 
 import React, { useEffect } from 'react';
-import { BadgeCheck, Brain, ChartBar, LineChart, LineChartIcon, MailOpen, MessageSquare, MousePointer, Search, TrendingUp, Zap } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { BadgeCheck, Brain, ChartBar, LineChart, MailOpen, MessageSquare, MousePointer, Search, TrendingUp, Zap } from 'lucide-react';
 
 const services = [
   {
+    id: "ai-seo",
     title: "AI-Powered SEO",
     description: "Optimize your content with machine learning algorithms that analyze search patterns in real-time.",
     icon: Search,
     delay: "0.1s"
   },
   {
+    id: "predictive-analytics",
     title: "Predictive Analytics",
     description: "Forecast market trends and customer behavior to stay ahead of your competition.",
     icon: LineChart,
     delay: "0.2s"
   },
   {
+    id: "conversion-optimization",
     title: "Conversion Optimization",
     description: "Use AI to analyze user behavior and automatically optimize for higher conversion rates.",
     icon: TrendingUp,
     delay: "0.3s"
   },
   {
+    id: "smart-content",
     title: "Smart Content Generation",
     description: "Create engaging, SEO-optimized content at scale with our AI content engine.",
     icon: Brain,
     delay: "0.4s"
   },
   {
+    id: "email-campaigns",
     title: "Automated Email Campaigns",
     description: "Personalized email marketing that adapts based on recipient engagement and behavior.",
     icon: MailOpen,
     delay: "0.5s"
   },
   {
+    id: "social-media",
     title: "Social Media Intelligence",
     description: "AI-driven analysis of trends and engagement patterns across all your social channels.",
     icon: MessageSquare,
@@ -88,10 +95,10 @@ const ServicesSection = () => {
               </div>
               <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
               <p className="text-gray-600">{service.description}</p>
-              <div className="mt-5 flex items-center text-blue-600 font-medium">
+              <Link to={`/services/${service.id}`} className="mt-5 flex items-center text-blue-600 font-medium group">
                 <span className="text-sm">Learn more</span>
-                <MousePointer className="h-4 w-4 ml-2" />
-              </div>
+                <MousePointer className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              </Link>
             </div>
           ))}
         </div>
