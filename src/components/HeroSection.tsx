@@ -76,8 +76,8 @@ const HeroSection = () => {
                 <div className="rounded-xl overflow-hidden glass-panel">
                   <div className="aspect-w-5 aspect-h-4 relative overflow-hidden">
                     <img
-                      src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                      alt="AI-powered marketing analytics dashboard"
+                      src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                      alt="Digital marketing team collaboration"
                       className="w-full h-full object-cover"
                     />
                     
