@@ -1,50 +1,90 @@
 
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { BadgeCheck, Brain, ChartBar, LineChart, MailOpen, MessageSquare, MousePointer, Search, TrendingUp, Zap } from 'lucide-react';
+import { 
+  BadgeCheck, 
+  Brain, 
+  ChartBar, 
+  LineChart, 
+  MailOpen, 
+  MessageSquare, 
+  MousePointer, 
+  Search, 
+  TrendingUp, 
+  Zap,
+  Instagram,
+  Target,
+  Bot,
+  Users,
+  Smartphone,
+  Code,
+  FileText,
+  Video
+} from 'lucide-react';
 
 const services = [
   {
-    id: "ai-seo",
-    title: "AI-Powered SEO",
-    description: "Optimize your content with machine learning algorithms that analyze search patterns in real-time.",
-    icon: Search,
+    id: "branding-strategy",
+    title: "Branding and Strategy",
+    description: "Develop a distinctive brand identity and comprehensive marketing strategy powered by AI insights.",
+    icon: TrendingUp,
     delay: "0.1s"
   },
   {
-    id: "predictive-analytics",
-    title: "Predictive Analytics",
-    description: "Forecast market trends and customer behavior to stay ahead of your competition.",
-    icon: LineChart,
+    id: "social-media-management",
+    title: "Social Media Management",
+    description: "AI-driven social media content creation, scheduling, and analytics to maximize engagement.",
+    icon: Instagram,
     delay: "0.2s"
   },
   {
-    id: "conversion-optimization",
-    title: "Conversion Optimization",
-    description: "Use AI to analyze user behavior and automatically optimize for higher conversion rates.",
-    icon: TrendingUp,
+    id: "ppc-advertising",
+    title: "PPC Advertisement",
+    description: "Data-driven Meta and Google Ads campaigns optimized by AI for maximum ROI.",
+    icon: Target,
     delay: "0.3s"
   },
   {
-    id: "smart-content",
-    title: "Smart Content Generation",
-    description: "Create engaging, SEO-optimized content at scale with our AI content engine.",
-    icon: Brain,
+    id: "business-automation",
+    title: "Business Automation",
+    description: "Streamline operations and marketing workflows with intelligent AI automation solutions.",
+    icon: Bot,
     delay: "0.4s"
   },
   {
-    id: "email-campaigns",
-    title: "Automated Email Campaigns",
-    description: "Personalized email marketing that adapts based on recipient engagement and behavior.",
-    icon: MailOpen,
+    id: "influencer-marketing",
+    title: "Influencer Marketing",
+    description: "Identify and collaborate with the perfect influencers for your brand using AI matching algorithms.",
+    icon: Users,
     delay: "0.5s"
   },
   {
-    id: "social-media",
-    title: "Social Media Intelligence",
-    description: "AI-driven analysis of trends and engagement patterns across all your social channels.",
-    icon: MessageSquare,
+    id: "whatsapp-marketing",
+    title: "WhatsApp Marketing",
+    description: "Create personalized WhatsApp campaigns with AI-powered customer segmentation and messaging.",
+    icon: Smartphone,
     delay: "0.6s"
+  },
+  {
+    id: "website-development",
+    title: "Website Development",
+    description: "Custom, responsive websites built with AI assistance for optimal user experience and conversions.",
+    icon: Code,
+    delay: "0.7s"
+  },
+  {
+    id: "content-creation",
+    title: "Content Creation",
+    description: "AI-generated text and video content customized to your brand voice and marketing objectives.",
+    icon: FileText,
+    delay: "0.8s"
+  },
+  {
+    id: "lead-generation",
+    title: "Lead Generation",
+    description: "Identify and capture high-quality leads using AI predictive analytics and targeting.",
+    icon: ChartBar,
+    delay: "0.9s"
   }
 ];
 
@@ -76,7 +116,7 @@ const ServicesSection = () => {
             Our Services
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            AI-Powered Solutions for Modern Marketing
+            AI-Powered Marketing Solutions
           </h2>
           <p className="text-gray-600 text-lg">
             We leverage artificial intelligence to transform how businesses connect with their audiences, providing measurable results through innovative strategies.
