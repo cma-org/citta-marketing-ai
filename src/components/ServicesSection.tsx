@@ -19,7 +19,9 @@ import {
   Smartphone,
   Code,
   FileText,
-  Video
+  Video,
+  Globe,
+  Mail
 } from 'lucide-react';
 
 const services = [
@@ -52,39 +54,53 @@ const services = [
     delay: "0.4s"
   },
   {
+    id: "seo-services",
+    title: "SEO Services",
+    description: "Comprehensive on-page and off-page SEO strategies powered by AI analysis and optimization.",
+    icon: Globe,
+    delay: "0.5s"
+  },
+  {
+    id: "email-marketing",
+    title: "Email Marketing",
+    description: "AI-driven email campaigns with personalized content, smart segmentation and automated workflows.",
+    icon: Mail,
+    delay: "0.6s"
+  },
+  {
     id: "influencer-marketing",
     title: "Influencer Marketing",
     description: "Identify and collaborate with the perfect influencers for your brand using AI matching algorithms.",
     icon: Users,
-    delay: "0.5s"
+    delay: "0.7s"
   },
   {
     id: "whatsapp-marketing",
     title: "WhatsApp Marketing",
     description: "Create personalized WhatsApp campaigns with AI-powered customer segmentation and messaging.",
     icon: Smartphone,
-    delay: "0.6s"
+    delay: "0.8s"
   },
   {
     id: "website-development",
     title: "Website Development",
     description: "Custom, responsive websites built with AI assistance for optimal user experience and conversions.",
     icon: Code,
-    delay: "0.7s"
+    delay: "0.9s"
   },
   {
     id: "content-creation",
     title: "Content Creation",
     description: "AI-generated text and video content customized to your brand voice and marketing objectives.",
     icon: FileText,
-    delay: "0.8s"
+    delay: "1.0s"
   },
   {
     id: "lead-generation",
     title: "Lead Generation",
     description: "Identify and capture high-quality leads using AI predictive analytics and targeting.",
     icon: ChartBar,
-    delay: "0.9s"
+    delay: "1.1s"
   }
 ];
 
