@@ -10,8 +10,8 @@ const contactMethods = [
   {
     icon: Mail,
     title: 'Email',
-    content: 'hello@synapseai.com',
-    href: 'mailto:hello@synapseai.com'
+    content: 'hello@cittamarketing.com',
+    href: 'mailto:hello@cittamarketing.com'
   },
   {
     icon: Phone,
@@ -22,7 +22,7 @@ const contactMethods = [
   {
     icon: MapPin,
     title: 'Office',
-    content: '123 AI Avenue, San Francisco, CA',
+    content: '123 Agency Avenue, San Francisco, CA',
     href: 'https://maps.google.com'
   }
 ];
@@ -98,7 +98,7 @@ const ContactSection = () => {
             </h2>
             
             <p className="text-lg text-gray-600 mb-8">
-              Let's discuss how our AI-powered solutions can help your business reach its full potential. Fill out the form and one of our specialists will get back to you within 24 hours.
+              Let's discuss how CITTA MARKETING AGENCY's AI-powered solutions can help your business reach its full potential. Fill out the form and one of our specialists will get back to you within 24 hours.
             </p>
             
             <div className="space-y-6">
@@ -186,7 +186,8 @@ const ContactSection = () => {
                 
                 <Button
                   type="submit"
-                  className={`w-full bg-blue-600 text-white hover:bg-blue-700 rounded-lg py-6 transition-all ${
+                  variant="citta"
+                  className={`w-full rounded-lg py-6 transition-all ${
                     isSubmitting ? 'opacity-90' : ''
                   }`}
                   disabled={isSubmitting}

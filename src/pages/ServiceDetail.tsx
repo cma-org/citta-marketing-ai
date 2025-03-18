@@ -1,9 +1,10 @@
-
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Instagram, Target, Bot, Users, Smartphone, Code, FileText, ChartBar, TrendingUp, Globe, Mail } from 'lucide-react';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
+import AuditRequestForm from '@/components/AuditRequestForm';
 
 // Service data with detailed information
 const serviceDetails = {
@@ -298,6 +299,7 @@ const serviceDetails = {
 const ServiceDetail = () => {
   const { serviceId } = useParams();
   const serviceData = serviceId ? serviceDetails[serviceId as keyof typeof serviceDetails] : null;
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
   
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -365,9 +367,19 @@ const ServiceDetail = () => {
               </ul>
             </div>
             
-            <Button className="bg-blue-600 text-white hover:bg-blue-700 rounded-full px-6 py-6 text-base shadow-lg transition-all">
-              Request a Consultation
-            </Button>
+            <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+              <DialogTrigger asChild>
+                <Button variant="citta" className="rounded-full px-6 py-6 text-base shadow-lg transition-all">
+                  Request a Consultation
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-md">
+                <DialogHeader>
+                  <DialogTitle className="text-2xl font-bold text-center mb-2">Request Your Free Consultation</DialogTitle>
+                </DialogHeader>
+                <AuditRequestForm />
+              </DialogContent>
+            </Dialog>
           </div>
           
           <div className="reveal">
@@ -421,14 +433,24 @@ const ServiceDetail = () => {
         </div>
         
         <div className="bg-blue-50 rounded-xl p-8 text-center max-w-3xl mx-auto reveal">
-          <h3 className="text-2xl font-semibold mb-4">Ready to transform your marketing with AI?</h3>
+          <h3 className="text-2xl font-semibold mb-4">Ready to transform your marketing with CITTA MARKETING AGENCY?</h3>
           <p className="text-lg text-gray-700 mb-6">
             Get in touch with our team today for a free consultation and discover how {serviceData.title} can help your business grow.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-blue-600 text-white hover:bg-blue-700 rounded-full px-6 py-6 text-base shadow-lg transition-all">
-              Request a Demo
-            </Button>
+            <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+              <DialogTrigger asChild>
+                <Button variant="citta" className="rounded-full px-6 py-6 text-base shadow-lg transition-all">
+                  Request a Demo
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-md">
+                <DialogHeader>
+                  <DialogTitle className="text-2xl font-bold text-center mb-2">Request a Free Demo</DialogTitle>
+                </DialogHeader>
+                <AuditRequestForm />
+              </DialogContent>
+            </Dialog>
             <Link to="/#contact">
               <Button variant="outline" className="border-gray-300 rounded-full px-6 py-6 text-base transition-all hover-card-animation">
                 Contact Us

@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -26,7 +27,7 @@ const Navbar = () => {
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-smooth ${isScrolled ? 'py-3 bg-white/90 backdrop-blur-md shadow-sm' : 'py-5 bg-transparent'}`}>
       <div className="container px-4 sm:px-6 lg:px-8 mx-auto flex justify-between items-center">
         <a href="#" className="flex items-center">
-          <span className="font-display text-xl sm:text-2xl font-bold">Synapse<span className="text-blue-600">AI</span></span>
+          <span className="font-display text-xl sm:text-2xl font-bold">CITTA<span className="text-blue-600">MARKETING</span></span>
         </a>
 
         {/* Desktop Navigation */}
@@ -35,9 +36,11 @@ const Navbar = () => {
           <a href="#about" className="text-sm font-medium hover:text-blue-600 transition-colors">About</a>
           <a href="#testimonials" className="text-sm font-medium hover:text-blue-600 transition-colors">Testimonials</a>
           <a href="#contact" className="text-sm font-medium hover:text-blue-600 transition-colors">Contact</a>
-          <Button className="bg-blue-600 text-white rounded-full px-5 hover:bg-blue-700 transition-all shadow-sm">
-            Get Started
-          </Button>
+          <Link to="/#contact">
+            <Button variant="citta" className="text-white rounded-full px-5 hover:bg-blue-700 transition-all shadow-sm">
+              Get Started
+            </Button>
+          </Link>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -57,9 +60,11 @@ const Navbar = () => {
           <a href="#about" className="text-sm font-medium py-2 hover:text-blue-600 transition-colors" onClick={toggleMenu}>About</a>
           <a href="#testimonials" className="text-sm font-medium py-2 hover:text-blue-600 transition-colors" onClick={toggleMenu}>Testimonials</a>
           <a href="#contact" className="text-sm font-medium py-2 hover:text-blue-600 transition-colors" onClick={toggleMenu}>Contact</a>
-          <Button className="bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-all w-full">
-            Get Started
-          </Button>
+          <Link to="/#contact" onClick={toggleMenu}>
+            <Button variant="citta" className="text-white rounded-full hover:bg-blue-700 transition-all w-full">
+              Get Started
+            </Button>
+          </Link>
         </div>
       </div>
     </header>

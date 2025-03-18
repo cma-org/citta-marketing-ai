@@ -1,9 +1,9 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { ArrowRight, BarChart2, Bot, TrendingUp } from 'lucide-react';
 import AuditRequestForm from './AuditRequestForm';
+import { Link } from 'react-router-dom';
 
 const HeroSection = () => {
   const elementsRef = useRef<(HTMLDivElement | null)[]>([]);
@@ -35,12 +35,12 @@ const HeroSection = () => {
             <div className="space-y-6 max-w-2xl">
               <div className="inline-flex items-center rounded-full bg-blue-50 px-3 py-1 text-sm font-medium text-blue-700 reveal">
                 <span className="flex h-2 w-2 rounded-full bg-blue-600 mr-2"></span>
-                Revolutionizing Digital Marketing
+                Leading Digital Marketing Agency
               </div>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight reveal">
-                <span className="block">AI-Powered Marketing</span>
-                <span className="block text-gradient">For the Digital Age</span>
+                <span className="block">CITTA MARKETING AGENCY</span>
+                <span className="block text-gradient">AI-Powered Solutions</span>
               </h1>
               
               <p className="text-lg text-gray-600 reveal">
@@ -50,20 +50,22 @@ const HeroSection = () => {
               <div className="flex flex-col sm:flex-row gap-4 pt-2 reveal">
                 <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
                   <DialogTrigger asChild>
-                    <Button className="bg-blue-600 text-white hover:bg-blue-700 rounded-full px-6 py-6 text-base shadow-lg transition-all">
-                      Get a Free Audit <ArrowRight className="ml-2 h-5 w-5" />
+                    <Button variant="citta" className="text-white rounded-full px-6 py-6 text-base shadow-lg transition-all">
+                      Request Free Consultation <ArrowRight className="ml-2 h-5 w-5" />
                     </Button>
                   </DialogTrigger>
                   <DialogContent className="sm:max-w-md">
                     <DialogHeader>
-                      <DialogTitle className="text-2xl font-bold text-center mb-2">Request Your Free Marketing Audit</DialogTitle>
+                      <DialogTitle className="text-2xl font-bold text-center mb-2">Request Your Free Marketing Consultation</DialogTitle>
                     </DialogHeader>
                     <AuditRequestForm />
                   </DialogContent>
                 </Dialog>
-                <Button variant="outline" className="border-gray-300 rounded-full px-6 py-6 text-base transition-all hover-card-animation">
-                  View Our Work
-                </Button>
+                <Link to="/#services">
+                  <Button variant="outline" className="border-gray-300 rounded-full px-6 py-6 text-base transition-all hover-card-animation">
+                    View Our Services
+                  </Button>
+                </Link>
               </div>
               
               <div className="grid grid-cols-3 gap-4 pt-6 reveal">
@@ -94,7 +96,6 @@ const HeroSection = () => {
                       className="w-full h-full object-cover"
                     />
                     
-                    {/* Floating UI elements */}
                     <div className="absolute top-1/4 -right-8 bg-white/90 backdrop-blur-sm rounded-lg p-3 shadow-lg animate-float">
                       <div className="flex items-center">
                         <TrendingUp className="h-4 w-4 text-green-500 mr-2" />
@@ -112,7 +113,6 @@ const HeroSection = () => {
                 </div>
               </div>
               
-              {/* Background decorative elements */}
               <div className="absolute -z-10 top-1/2 -right-12 w-24 h-24 rounded-full bg-blue-200/50 blur-2xl"></div>
               <div className="absolute -z-10 bottom-1/3 -left-8 w-20 h-20 rounded-full bg-sky-200/50 blur-2xl"></div>
             </div>
