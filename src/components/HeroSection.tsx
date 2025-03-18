@@ -8,12 +8,12 @@ import { Link } from 'react-router-dom';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 
-// Updated high-quality AI-powered marketing images
+// Updated high-quality AI-powered marketing images with reliable sources
 const heroImages = [
-  "https://images.unsplash.com/photo-1677442135140-1edb38ac62b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=90", // AI visualization - increased resolution
-  "https://images.unsplash.com/photo-1656078250250-430c3e543247?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=90", // Digital marketing analytics - increased resolution
-  "https://images.unsplash.com/photo-1677442136063-60183fff9bcb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=90", // AI abstract - increased resolution
-  "https://images.unsplash.com/photo-1679512598221-8ec5006a5209?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=90"  // Data visualization - increased resolution
+  "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=90", // Tech visualization
+  "https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=90", // Digital circuit
+  "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=90", // Programming screen
+  "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=90"  // Person using laptop
 ];
 
 const HeroSection = () => {
@@ -113,10 +113,10 @@ const HeroSection = () => {
                             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end">
                               <div className="p-6 text-white text-left">
                                 <p className="text-base md:text-lg font-semibold tracking-wide">
-                                  {index === 0 ? "AI-Driven Campaign Analytics" : 
-                                   index === 1 ? "Data-Powered Marketing Strategy" : 
-                                   index === 2 ? "Neural Network Optimization" : 
-                                   "Predictive Marketing Intelligence"}
+                                  {index === 0 ? "Advanced Tech Solutions" : 
+                                   index === 1 ? "Integrated Digital Systems" : 
+                                   index === 2 ? "AI-Powered Code Optimization" : 
+                                   "Smart Marketing Analytics"}
                                 </p>
                               </div>
                             </div>
