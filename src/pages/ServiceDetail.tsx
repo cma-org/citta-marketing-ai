@@ -1,165 +1,296 @@
 
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, Brain, LineChart, MailOpen, MessageSquare, Search, TrendingUp } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Instagram, Target, Bot, Users, Smartphone, Code, FileText, ChartBar, TrendingUp, Globe, Mail } from 'lucide-react';
 
 // Service data with detailed information
 const serviceDetails = {
-  "ai-seo": {
-    title: "AI-Powered SEO",
-    icon: Search,
-    description: "Our AI-powered SEO service leverages cutting-edge machine learning algorithms to analyze search patterns in real-time, helping your content rank higher on search engines.",
-    benefits: [
-      "Real-time keyword analysis and optimization",
-      "Predictive search trend forecasting",
-      "Automated content gap identification",
-      "Semantic search understanding",
-      "Competitor strategy analysis"
-    ],
-    process: [
-      "Initial website and content audit",
-      "AI analysis of search patterns and trends",
-      "Customized SEO strategy development",
-      "Implementation of optimizations",
-      "Continuous monitoring and refinement"
-    ],
-    image: "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    caseStudy: {
-      client: "TechNova Solutions",
-      challenge: "Low organic traffic and poor search visibility despite quality content",
-      solution: "Implemented AI-powered keyword analysis and content optimization",
-      result: "187% increase in organic traffic and 43% improvement in keyword rankings within 3 months"
-    }
-  },
-  "predictive-analytics": {
-    title: "Predictive Analytics",
-    icon: LineChart,
-    description: "Our predictive analytics service uses sophisticated AI models to forecast market trends and customer behavior, giving you a competitive edge in your industry.",
-    benefits: [
-      "Accurate market trend forecasting",
-      "Customer behavior prediction",
-      "Product demand analysis",
-      "Risk assessment and mitigation",
-      "Strategic decision support"
-    ],
-    process: [
-      "Data collection and preparation",
-      "AI model training with your historical data",
-      "Pattern identification and trend analysis",
-      "Predictive model development",
-      "Actionable insights delivery"
-    ],
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    caseStudy: {
-      client: "Global Retail Chain",
-      challenge: "Inability to predict seasonal demand fluctuations leading to inventory issues",
-      solution: "Deployed AI predictive models analyzing years of sales data and market trends",
-      result: "Reduced inventory costs by 27% and improved product availability by 35%"
-    }
-  },
-  "conversion-optimization": {
-    title: "Conversion Optimization",
+  "branding-strategy": {
+    title: "AI-Powered Branding and Strategy",
     icon: TrendingUp,
-    description: "Our AI-driven conversion optimization service analyzes user behavior to automatically identify and implement changes that increase your conversion rates.",
+    description: "Our AI-powered branding and strategy service uses advanced algorithms to analyze market trends, consumer behavior, and competitive landscapes to create a distinctive brand identity and marketing strategy tailored to your specific goals.",
     benefits: [
-      "Personalized user experience",
-      "Behavior-based funnel optimization",
-      "Automated A/B testing",
-      "Conversion bottleneck identification",
-      "Real-time optimization recommendations"
+      "Data-driven brand positioning based on market analysis",
+      "AI-generated brand voice and visual identity recommendations",
+      "Competitive analysis using natural language processing",
+      "Customer persona development using behavioral data",
+      "Strategic roadmap creation with predictive analytics"
     ],
     process: [
-      "Comprehensive conversion audit",
-      "User behavior analysis using AI",
-      "Conversion path mapping",
-      "Implementation of optimizations",
-      "Continuous testing and refinement"
+      "Comprehensive market and brand analysis using AI tools",
+      "Data collection and pattern identification across industries",
+      "Strategy development using predictive modeling",
+      "Brand identity creation with AI creative assistance",
+      "Implementation and continuous optimization"
     ],
-    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1606765962248-7ff407b51667?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     caseStudy: {
-      client: "E-commerce Platform",
-      challenge: "High cart abandonment rate and low checkout completion",
-      solution: "Implemented AI-driven user experience optimizations based on behavior analysis",
-      result: "63% decrease in cart abandonment and 47% increase in conversion rate"
+      client: "E-commerce Startup",
+      challenge: "Needed to establish a distinctive brand in a crowded market with limited resources",
+      solution: "Implemented AI-driven market analysis and brand strategy development",
+      result: "Achieved 240% increase in brand recognition and 72% improvement in customer engagement within 6 months"
     }
   },
-  "smart-content": {
-    title: "Smart Content Generation",
-    icon: Brain,
-    description: "Our smart content generation service creates engaging, SEO-optimized content at scale using advanced AI models that understand your brand voice and audience preferences.",
+  "social-media-management": {
+    title: "AI-Powered Social Media Management",
+    icon: Instagram,
+    description: "Our AI-driven social media management service uses advanced algorithms to create, schedule, and optimize content across all your social platforms, ensuring maximum engagement and ROI while saving you valuable time.",
     benefits: [
-      "Brand-consistent content at scale",
-      "SEO-optimized for maximum visibility",
-      "Audience-targeted messaging",
-      "Multilingual content capabilities",
-      "Diverse content formats"
+      "AI-generated content ideas based on trending topics",
+      "Optimal posting schedule determined by algorithm",
+      "Automated content creation with brand voice consistency",
+      "Real-time engagement monitoring and response suggestions",
+      "Comprehensive analytics and performance optimization"
     ],
     process: [
-      "Brand voice analysis and content audit",
-      "AI training on your successful content",
-      "Content strategy development",
-      "Automated content generation and refinement",
-      "Performance tracking and optimization"
+      "Social account audit and historical performance analysis",
+      "AI-driven content strategy development",
+      "Automated content creation and scheduling",
+      "Engagement monitoring and response management",
+      "Continuous optimization based on performance data"
     ],
-    image: "https://images.unsplash.com/photo-1523726491678-bf852e717f6a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     caseStudy: {
-      client: "Industry News Publication",
-      challenge: "Struggled to produce enough quality content to keep audience engaged",
-      solution: "Implemented AI content generation system with editorial oversight",
-      result: "Increased content output by 400% while maintaining high engagement and reducing costs by 35%"
+      client: "Retail Brand Chain",
+      challenge: "Inconsistent social media presence and low engagement across multiple platforms",
+      solution: "Implemented AI-powered content creation and optimization strategy",
+      result: "185% increase in engagement, 210% growth in followers, and 75% improvement in conversion rate from social channels"
     }
   },
-  "email-campaigns": {
-    title: "Automated Email Campaigns",
-    icon: MailOpen,
-    description: "Our automated email marketing service creates personalized email campaigns that adapt based on recipient engagement and behavior, maximizing open rates and conversions.",
+  "ppc-advertising": {
+    title: "AI-Optimized PPC Advertising",
+    icon: Target,
+    description: "Our AI-powered PPC advertising service optimizes your Google and Meta ad campaigns in real-time, analyzing thousands of data points to maximize your return on ad spend and drive qualified leads to your business.",
     benefits: [
-      "Hyper-personalized email content",
-      "Behavior-triggered campaign sequences",
-      "Optimal send time prediction",
-      "Subject line optimization",
-      "Continuous performance improvement"
+      "Automated bid management and optimization",
+      "AI-driven audience targeting and segmentation",
+      "Dynamic ad creation and testing",
+      "Predictive performance modeling",
+      "Cross-platform campaign coordination"
     ],
     process: [
-      "Audience segmentation and analysis",
-      "AI-driven content personalization",
-      "Campaign sequence development",
-      "Automated deployment and monitoring",
-      "Performance analysis and refinement"
+      "Comprehensive account audit and competitive analysis",
+      "AI-based keyword research and selection",
+      "Campaign structure development and implementation",
+      "Automated bid management and budget allocation",
+      "Continuous testing and optimization"
+    ],
+    image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    caseStudy: {
+      client: "SaaS Company",
+      challenge: "High cost per acquisition and low conversion rates from PPC campaigns",
+      solution: "Implemented AI-driven campaign optimization and audience targeting",
+      result: "63% reduction in cost per acquisition, 87% increase in qualified leads, and 45% improvement in ROI"
+    }
+  },
+  "business-automation": {
+    title: "AI-Powered Business Automation",
+    icon: Bot,
+    description: "Our business automation service uses artificial intelligence to identify, streamline, and automate repetitive tasks and workflows in your marketing operations, freeing up your team to focus on strategic initiatives.",
+    benefits: [
+      "Custom workflow automation for marketing processes",
+      "AI-powered customer journey mapping and optimization",
+      "Automated lead nurturing and qualification",
+      "Intelligent data collection and analysis",
+      "Cross-platform integration and synchronization"
+    ],
+    process: [
+      "Business process audit and opportunity identification",
+      "Workflow mapping and optimization planning",
+      "Custom automation solution development",
+      "Integration with existing systems and platforms",
+      "Deployment, testing, and continuous improvement"
+    ],
+    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    caseStudy: {
+      client: "Professional Services Firm",
+      challenge: "Manual, time-consuming marketing processes limiting team productivity",
+      solution: "Implemented comprehensive workflow automation using AI systems",
+      result: "71% reduction in time spent on routine tasks, 43% increase in lead processing capacity, and 35% improvement in conversion rates"
+    }
+  },
+  "seo-services": {
+    title: "AI-Powered SEO Services",
+    icon: Globe,
+    description: "Our AI-powered SEO service combines on-page and off-page optimization strategies, using machine learning to analyze search patterns, competitor strategies, and content performance to improve your organic visibility.",
+    benefits: [
+      "AI-driven keyword research and content gap analysis",
+      "Automated technical SEO audits and fixes",
+      "Content optimization using natural language processing",
+      "Predictive ranking analysis and opportunity identification",
+      "Comprehensive backlink strategy development"
+    ],
+    process: [
+      "Comprehensive website and content audit",
+      "Keyword research and competitive analysis using AI",
+      "On-page optimization implementation",
+      "Technical SEO improvements",
+      "Off-page strategy development and execution"
+    ],
+    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    caseStudy: {
+      client: "Educational Platform",
+      challenge: "Low organic traffic and poor search visibility despite quality content",
+      solution: "Implemented comprehensive AI-driven SEO strategy focusing on both on-page and off-page factors",
+      result: "214% increase in organic traffic, 156% improvement in keyword rankings, and 87% growth in organic conversions"
+    }
+  },
+  "email-marketing": {
+    title: "AI-Powered Email Marketing",
+    icon: Mail,
+    description: "Our AI-driven email marketing service creates highly personalized campaigns that adapt based on recipient behavior, optimizing everything from subject lines to send times for maximum open rates and conversions.",
+    benefits: [
+      "AI-generated subject line optimization",
+      "Personalized content based on user behavior",
+      "Automated segmentation and targeting",
+      "Send time optimization for each recipient",
+      "Predictive campaign performance analysis"
+    ],
+    process: [
+      "Audience analysis and segmentation",
+      "Campaign strategy development",
+      "AI-driven content creation and personalization",
+      "Automated deployment and testing",
+      "Performance analysis and continuous optimization"
     ],
     image: "https://images.unsplash.com/photo-1596526131083-e8c633c948d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     caseStudy: {
-      client: "SaaS Provider",
-      challenge: "Low email engagement and conversion rates despite large subscriber base",
-      solution: "Implemented AI-personalized email campaigns with behavior-based sequencing",
-      result: "245% increase in open rates, 189% increase in click-through rates, and 97% increase in conversions"
+      client: "Online Retailer",
+      challenge: "Low email engagement rates and poor conversion performance",
+      solution: "Implemented AI-powered personalization and optimization strategy",
+      result: "189% increase in open rates, 157% improvement in click-through rates, and 94% growth in email-driven revenue"
     }
   },
-  "social-media": {
-    title: "Social Media Intelligence",
-    icon: MessageSquare,
-    description: "Our social media intelligence service provides AI-driven analysis of trends and engagement patterns across all your social channels, helping you optimize your social media strategy.",
+  "influencer-marketing": {
+    title: "AI-Powered Influencer Marketing",
+    icon: Users,
+    description: "Our AI-driven influencer marketing service uses advanced algorithms to identify, evaluate, and connect you with the perfect influencers for your brand, ensuring authentic partnerships that drive real results.",
     benefits: [
-      "Cross-platform trend analysis",
-      "Engagement pattern recognition",
-      "Content performance prediction",
-      "Audience sentiment analysis",
-      "Competitive intelligence"
+      "AI-powered influencer discovery and matching",
+      "Audience alignment and authenticity verification",
+      "Performance prediction and ROI forecasting",
+      "Automated campaign management and tracking",
+      "Comprehensive performance analytics"
     ],
     process: [
-      "Social media account integration and audit",
-      "Historical performance analysis",
-      "AI trend identification and forecasting",
-      "Strategy development and content planning",
-      "Continuous monitoring and optimization"
+      "Brand goals and audience analysis",
+      "AI-driven influencer identification and vetting",
+      "Strategy development and influencer outreach",
+      "Campaign management and content coordination",
+      "Performance tracking and optimization"
     ],
-    image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1557838923-2985c318be48?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     caseStudy: {
-      client: "Consumer Brand",
-      challenge: "Inconsistent social media performance and inability to identify successful content patterns",
-      solution: "Deployed AI social media analysis across all platforms with content optimization",
-      result: "156% increase in engagement, 78% improvement in content performance, and 3x growth in social conversions"
+      client: "Beauty Brand",
+      challenge: "Difficulty finding authentic influencers who resonated with their target audience",
+      solution: "Used AI matching algorithms to identify and vet ideal influencer partners",
+      result: "167% increase in campaign engagement, 132% improvement in conversion rates, and 45% reduction in influencer marketing costs"
+    }
+  },
+  "whatsapp-marketing": {
+    title: "AI-Powered WhatsApp Marketing",
+    icon: Smartphone,
+    description: "Our WhatsApp marketing service leverages AI to create personalized messaging campaigns that engage your audience on their preferred messaging platform, with automated responses and intelligent conversation flows.",
+    benefits: [
+      "AI-driven customer segmentation and targeting",
+      "Automated chatbot responses and conversation flows",
+      "Personalized messaging based on user behavior",
+      "Campaign scheduling and optimization",
+      "Comprehensive analytics and performance tracking"
+    ],
+    process: [
+      "Audience analysis and segmentation",
+      "Campaign strategy development",
+      "Chatbot development and integration",
+      "Content creation and personalization",
+      "Deployment, monitoring, and optimization"
+    ],
+    image: "https://images.unsplash.com/photo-1559307429-4eb0be9c63cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    caseStudy: {
+      client: "Service Provider",
+      challenge: "Needed to engage customers on their preferred platform with limited staff resources",
+      solution: "Implemented AI-powered WhatsApp marketing strategy with automated responses",
+      result: "73% increase in customer engagement, 94% improvement in response time, and 52% growth in conversions"
+    }
+  },
+  "website-development": {
+    title: "AI-Enhanced Website Development",
+    icon: Code,
+    description: "Our website development service uses AI to create custom, high-performance websites optimized for conversions, with intelligent features that adapt to user behavior and preferences in real-time.",
+    benefits: [
+      "AI-driven design recommendations for optimal UX",
+      "Personalized user experiences based on behavior",
+      "Conversion path optimization using predictive analytics",
+      "Automated content suggestions and optimization",
+      "Intelligent performance monitoring and enhancement"
+    ],
+    process: [
+      "Requirements analysis and planning",
+      "AI-assisted design creation and refinement",
+      "Development and feature implementation",
+      "Testing and optimization",
+      "Deployment and ongoing performance monitoring"
+    ],
+    image: "https://images.unsplash.com/photo-1593720213428-28a5b9e94613?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    caseStudy: {
+      client: "Fintech Startup",
+      challenge: "Needed a high-conversion website that could adapt to different user segments",
+      solution: "Created an AI-enhanced website with personalized user journeys",
+      result: "127% increase in conversion rate, 63% improvement in average session duration, and 85% positive feedback from user testing"
+    }
+  },
+  "content-creation": {
+    title: "AI-Powered Content Creation",
+    icon: FileText,
+    description: "Our AI content creation service generates high-quality text and video content customized to your brand voice, optimized for search engines, and tailored to engage your specific audience segments.",
+    benefits: [
+      "AI-generated content ideas based on trending topics",
+      "SEO-optimized content creation at scale",
+      "Brand voice consistency across all content",
+      "Multilingual content capabilities",
+      "Automated content performance analysis"
+    ],
+    process: [
+      "Brand voice analysis and content audit",
+      "Content strategy development",
+      "AI-assisted content creation and optimization",
+      "Publishing and distribution",
+      "Performance monitoring and refinement"
+    ],
+    image: "https://images.unsplash.com/photo-1591522810850-58128c5fb089?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    caseStudy: {
+      client: "B2B Software Company",
+      challenge: "Struggled to produce enough quality content to support marketing efforts",
+      solution: "Implemented AI-powered content creation system with editorial oversight",
+      result: "350% increase in content output, 75% improvement in engagement metrics, and 62% growth in organic traffic"
+    }
+  },
+  "lead-generation": {
+    title: "AI-Powered Lead Generation",
+    icon: ChartBar,
+    description: "Our AI lead generation service uses predictive analytics and machine learning to identify, attract, and qualify the highest-potential prospects for your business, ensuring your sales team focuses on the most valuable opportunities.",
+    benefits: [
+      "AI-driven ideal customer profile development",
+      "Predictive lead scoring and qualification",
+      "Automated lead nurturing and engagement",
+      "Intelligent cross-channel lead capture",
+      "Comprehensive lead analytics and insights"
+    ],
+    process: [
+      "Customer data analysis and segmentation",
+      "Lead generation strategy development",
+      "Campaign implementation across channels",
+      "Lead capturing and qualification automation",
+      "Performance monitoring and optimization"
+    ],
+    image: "https://images.unsplash.com/photo-1494176417869-e4b438a3b8bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    caseStudy: {
+      client: "Manufacturing Company",
+      challenge: "High volume of leads but low conversion rate due to poor qualification",
+      solution: "Implemented AI-powered lead scoring and nurturing system",
+      result: "67% improvement in qualified lead rate, 54% reduction in cost per acquisition, and 128% increase in conversion rate"
     }
   }
 };
@@ -298,9 +429,11 @@ const ServiceDetail = () => {
             <Button className="bg-blue-600 text-white hover:bg-blue-700 rounded-full px-6 py-6 text-base shadow-lg transition-all">
               Request a Demo
             </Button>
-            <Button variant="outline" className="border-gray-300 rounded-full px-6 py-6 text-base transition-all hover-card-animation">
-              Learn About Pricing
-            </Button>
+            <Link to="/#contact">
+              <Button variant="outline" className="border-gray-300 rounded-full px-6 py-6 text-base transition-all hover-card-animation">
+                Contact Us
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
