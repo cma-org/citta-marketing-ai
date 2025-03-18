@@ -7,11 +7,12 @@ import AuditRequestForm from './AuditRequestForm';
 import { Link } from 'react-router-dom';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 
+// Updated AI-powered marketing images
 const heroImages = [
-  "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1661956602116-aa6865609028?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1581089781785-603411fa81e5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+  "https://images.unsplash.com/photo-1677442135140-1edb38ac62b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", // AI visualization
+  "https://images.unsplash.com/photo-1656078250250-430c3e543247?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", // Digital marketing analytics
+  "https://images.unsplash.com/photo-1677442136063-60183fff9bcb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", // AI abstract
+  "https://images.unsplash.com/photo-1679512598221-8ec5006a5209?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"  // Data visualization
 ];
 
 const HeroSection = () => {
@@ -105,16 +106,26 @@ const HeroSection = () => {
                           <div className="aspect-w-5 aspect-h-4 relative overflow-hidden">
                             <img
                               src={image}
-                              alt={`Digital marketing scene ${index + 1}`}
+                              alt={`AI-powered marketing ${index + 1}`}
                               className="w-full h-full object-cover transition-all duration-700 hover:scale-110"
                             />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent flex items-end">
+                              <div className="p-4 text-white text-left">
+                                <p className="text-sm font-medium">
+                                  {index === 0 ? "AI-Driven Campaign Analytics" : 
+                                   index === 1 ? "Data-Powered Marketing Strategy" : 
+                                   index === 2 ? "Neural Network Optimization" : 
+                                   "Predictive Marketing Intelligence"}
+                                </p>
+                              </div>
+                            </div>
                           </div>
                         </CarouselItem>
                       ))}
                     </CarouselContent>
                     <div className="absolute inset-0 flex items-center justify-between p-2 z-10">
-                      <CarouselPrevious className="h-8 w-8 left-2" />
-                      <CarouselNext className="h-8 w-8 right-2" />
+                      <CarouselPrevious className="h-8 w-8 left-2 bg-white/80 backdrop-blur-sm hover:bg-white" />
+                      <CarouselNext className="h-8 w-8 right-2 bg-white/80 backdrop-blur-sm hover:bg-white" />
                     </div>
                   </Carousel>
                   
