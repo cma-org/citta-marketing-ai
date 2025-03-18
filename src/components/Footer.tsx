@@ -1,12 +1,41 @@
 
 import React from 'react';
-import { Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
+import { Facebook, Instagram, Linkedin, Twitter, Mail, PhoneCall } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const socialLinks = [
-  { icon: Twitter, href: '#' },
-  { icon: Facebook, href: '#' },
-  { icon: Instagram, href: '#' },
-  { icon: Linkedin, href: '#' }
+  { icon: Twitter, href: 'https://twitter.com/cittaai', label: 'Twitter' },
+  { icon: Facebook, href: 'https://facebook.com/cittaai', label: 'Facebook' },
+  { icon: Instagram, href: 'https://instagram.com/cittaai', label: 'Instagram' },
+  { icon: Linkedin, href: 'https://linkedin.com/company/cittaai', label: 'LinkedIn' }
+];
+
+const companyLinks = [
+  { label: 'About Us', href: '/about' },
+  { label: 'Our Team', href: '/team' },
+  { label: 'Careers', href: '/careers' },
+  { label: 'Blog', href: '/blog' }
+];
+
+const serviceLinks = [
+  { label: 'AI Marketing', href: '/services/branding-strategy' },
+  { label: 'SEO Optimization', href: '/services/seo-services' },
+  { label: 'Content Creation', href: '/services/content-creation' },
+  { label: 'Analytics', href: '/services/business-automation' }
+];
+
+const resourceLinks = [
+  { label: 'Case Studies', href: '/case-studies' },
+  { label: 'Documentation', href: '/resources/documentation' },
+  { label: 'Help Center', href: '/help-center' },
+  { label: 'API', href: '/developers/api' }
+];
+
+const legalLinks = [
+  { label: 'Privacy Policy', href: '/legal/privacy-policy' },
+  { label: 'Terms of Service', href: '/legal/terms-of-service' },
+  { label: 'Security', href: '/legal/security' },
+  { label: 'Cookies', href: '/legal/cookies' }
 ];
 
 const Footer = () => {
@@ -30,51 +59,80 @@ const Footer = () => {
                     key={index}
                     href={social.href}
                     className="bg-blue-500/30 hover:bg-blue-500/50 p-2 rounded-full transition-colors"
-                    aria-label={`Follow us on ${social.icon.name}`}
+                    aria-label={`Follow us on ${social.label}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <social.icon className="h-5 w-5" />
                   </a>
                 ))}
+              </div>
+              
+              <div className="mt-8 space-y-4">
+                <div className="flex items-center">
+                  <Mail className="h-5 w-5 mr-3 text-blue-300" />
+                  <a href="mailto:team@influenceai.in" className="text-blue-100 hover:text-white transition-colors">
+                    team@influenceai.in
+                  </a>
+                </div>
+                <div className="flex items-center">
+                  <PhoneCall className="h-5 w-5 mr-3 text-blue-300" />
+                  <a href="tel:+918919333347" className="text-blue-100 hover:text-white transition-colors">
+                    +91 8919333347
+                  </a>
+                </div>
               </div>
             </div>
             
             <div className="md:col-span-2">
               <h3 className="font-medium text-lg mb-4">Company</h3>
               <ul className="space-y-3">
-                <li><a href="#" className="text-blue-100 hover:text-white transition-colors">About</a></li>
-                <li><a href="#" className="text-blue-100 hover:text-white transition-colors">Careers</a></li>
-                <li><a href="#" className="text-blue-100 hover:text-white transition-colors">Blog</a></li>
-                <li><a href="#" className="text-blue-100 hover:text-white transition-colors">Team</a></li>
+                {companyLinks.map((link, index) => (
+                  <li key={index}>
+                    <Link to={link.href} className="text-blue-100 hover:text-white transition-colors">
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
             
             <div className="md:col-span-2">
               <h3 className="font-medium text-lg mb-4">Services</h3>
               <ul className="space-y-3">
-                <li><a href="#" className="text-blue-100 hover:text-white transition-colors">AI Marketing</a></li>
-                <li><a href="#" className="text-blue-100 hover:text-white transition-colors">SEO Optimization</a></li>
-                <li><a href="#" className="text-blue-100 hover:text-white transition-colors">Content Creation</a></li>
-                <li><a href="#" className="text-blue-100 hover:text-white transition-colors">Analytics</a></li>
+                {serviceLinks.map((link, index) => (
+                  <li key={index}>
+                    <Link to={link.href} className="text-blue-100 hover:text-white transition-colors">
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
             
             <div className="md:col-span-2">
               <h3 className="font-medium text-lg mb-4">Resources</h3>
               <ul className="space-y-3">
-                <li><a href="#" className="text-blue-100 hover:text-white transition-colors">Case Studies</a></li>
-                <li><a href="#" className="text-blue-100 hover:text-white transition-colors">Documentation</a></li>
-                <li><a href="#" className="text-blue-100 hover:text-white transition-colors">Help Center</a></li>
-                <li><a href="#" className="text-blue-100 hover:text-white transition-colors">API</a></li>
+                {resourceLinks.map((link, index) => (
+                  <li key={index}>
+                    <Link to={link.href} className="text-blue-100 hover:text-white transition-colors">
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
             
             <div className="md:col-span-2">
               <h3 className="font-medium text-lg mb-4">Legal</h3>
               <ul className="space-y-3">
-                <li><a href="#" className="text-blue-100 hover:text-white transition-colors">Privacy</a></li>
-                <li><a href="#" className="text-blue-100 hover:text-white transition-colors">Terms</a></li>
-                <li><a href="#" className="text-blue-100 hover:text-white transition-colors">Security</a></li>
-                <li><a href="#" className="text-blue-100 hover:text-white transition-colors">Cookies</a></li>
+                {legalLinks.map((link, index) => (
+                  <li key={index}>
+                    <Link to={link.href} className="text-blue-100 hover:text-white transition-colors">
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -87,9 +145,21 @@ const Footer = () => {
             </p>
             <div className="mt-4 md:mt-0">
               <ul className="flex space-x-6 text-sm">
-                <li><a href="#" className="text-blue-100 hover:text-white transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="text-blue-100 hover:text-white transition-colors">Terms of Service</a></li>
-                <li><a href="#" className="text-blue-100 hover:text-white transition-colors">Cookies</a></li>
+                <li>
+                  <Link to="/legal/privacy-policy" className="text-blue-100 hover:text-white transition-colors">
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/legal/terms-of-service" className="text-blue-100 hover:text-white transition-colors">
+                    Terms of Service
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/legal/cookies" className="text-blue-100 hover:text-white transition-colors">
+                    Cookies
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>

@@ -132,7 +132,7 @@ const ContactSection = () => {
                   <Input
                     id="name"
                     name="name"
-                    placeholder="John Doe"
+                    placeholder="Enter your full name"
                     required
                     value={formData.name}
                     onChange={handleChange}
@@ -148,7 +148,7 @@ const ContactSection = () => {
                     id="email"
                     name="email"
                     type="email"
-                    placeholder="john@example.com"
+                    placeholder="Enter your email address"
                     required
                     value={formData.email}
                     onChange={handleChange}
@@ -163,7 +163,7 @@ const ContactSection = () => {
                   <Input
                     id="company"
                     name="company"
-                    placeholder="Your Company Ltd."
+                    placeholder="Enter your company name (optional)"
                     value={formData.company}
                     onChange={handleChange}
                     className="w-full rounded-lg"
@@ -177,7 +177,7 @@ const ContactSection = () => {
                   <Textarea
                     id="message"
                     name="message"
-                    placeholder="Tell us about your project and needs..."
+                    placeholder="Tell us about your project and goals..."
                     rows={4}
                     required
                     value={formData.message}

@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -35,9 +36,11 @@ const Navbar = () => {
           <a href="#about" className="text-sm font-medium hover:text-blue-600 transition-colors">About</a>
           <a href="#testimonials" className="text-sm font-medium hover:text-blue-600 transition-colors">Testimonials</a>
           <a href="#contact" className="text-sm font-medium hover:text-blue-600 transition-colors">Contact</a>
-          <Button className="bg-blue-600 text-white rounded-full px-5 hover:bg-blue-700 transition-all shadow-sm">
-            Get Started
-          </Button>
+          <Link to="/contact">
+            <Button className="bg-blue-600 text-white rounded-full px-5 hover:bg-blue-700 transition-all shadow-sm">
+              Get Started
+            </Button>
+          </Link>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -57,9 +60,11 @@ const Navbar = () => {
           <a href="#about" className="text-sm font-medium py-2 hover:text-blue-600 transition-colors" onClick={toggleMenu}>About</a>
           <a href="#testimonials" className="text-sm font-medium py-2 hover:text-blue-600 transition-colors" onClick={toggleMenu}>Testimonials</a>
           <a href="#contact" className="text-sm font-medium py-2 hover:text-blue-600 transition-colors" onClick={toggleMenu}>Contact</a>
-          <Button className="bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-all w-full">
-            Get Started
-          </Button>
+          <Link to="/contact">
+            <Button className="bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-all w-full">
+              Get Started
+            </Button>
+          </Link>
         </div>
       </div>
     </header>
