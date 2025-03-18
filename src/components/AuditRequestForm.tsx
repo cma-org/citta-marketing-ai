@@ -158,8 +158,7 @@ const AuditRequestForm = () => {
 
         <Button 
           type="submit" 
-          variant="citta"
-          className="w-full"
+          className="w-full bg-blue-600 hover:bg-blue-700"
           disabled={isSubmitting}
         >
           {isSubmitting ? (
