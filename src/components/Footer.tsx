@@ -19,7 +19,7 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
             <div className="md:col-span-4">
               <div className="mb-6">
-                <span className="font-display text-2xl font-bold">Synapse<span className="text-blue-100">AI</span></span>
+                <span className="font-display text-2xl font-bold">Citta<span className="text-blue-100">AI</span></span>
               </div>
               <p className="text-blue-100 max-w-xs mb-6">
                 Transforming digital marketing with artificial intelligence and data-driven strategies for the modern age.
@@ -83,7 +83,7 @@ const Footer = () => {
         <div className="border-t border-blue-500/30 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-blue-100 text-sm">
-              © {currentYear} SynapseAI. All rights reserved.
+              © {currentYear} CittaAI. All rights reserved.
             </p>
             <div className="mt-4 md:mt-0">
               <ul className="flex space-x-6 text-sm">
