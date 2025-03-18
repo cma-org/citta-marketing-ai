@@ -6,13 +6,14 @@ import { ArrowRight, BarChart2, Bot, TrendingUp } from 'lucide-react';
 import AuditRequestForm from './AuditRequestForm';
 import { Link } from 'react-router-dom';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
 
-// Updated AI-powered marketing images
+// Updated high-quality AI-powered marketing images
 const heroImages = [
-  "https://images.unsplash.com/photo-1677442135140-1edb38ac62b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", // AI visualization
-  "https://images.unsplash.com/photo-1656078250250-430c3e543247?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", // Digital marketing analytics
-  "https://images.unsplash.com/photo-1677442136063-60183fff9bcb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", // AI abstract
-  "https://images.unsplash.com/photo-1679512598221-8ec5006a5209?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"  // Data visualization
+  "https://images.unsplash.com/photo-1677442135140-1edb38ac62b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=90", // AI visualization - increased resolution
+  "https://images.unsplash.com/photo-1656078250250-430c3e543247?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=90", // Digital marketing analytics - increased resolution
+  "https://images.unsplash.com/photo-1677442136063-60183fff9bcb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=90", // AI abstract - increased resolution
+  "https://images.unsplash.com/photo-1679512598221-8ec5006a5209?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=90"  // Data visualization - increased resolution
 ];
 
 const HeroSection = () => {
@@ -97,21 +98,21 @@ const HeroSection = () => {
           
           <div className="md:col-span-5 reveal">
             <div className="relative">
-              <div className="rounded-2xl bg-gradient-to-br from-blue-200 to-sky-200 p-2 shadow-lg overflow-hidden">
-                <div className="rounded-xl overflow-hidden glass-panel">
-                  <Carousel className="w-full">
+              <div className="rounded-2xl bg-gradient-to-br from-blue-200 to-sky-200 p-2 shadow-xl overflow-hidden transform hover:scale-[1.02] transition-all duration-500">
+                <div className="rounded-xl overflow-hidden glass-panel shadow-inner">
+                  <Carousel className="w-full" opts={{ loop: true }}>
                     <CarouselContent>
                       {heroImages.map((image, index) => (
                         <CarouselItem key={index}>
-                          <div className="aspect-w-5 aspect-h-4 relative overflow-hidden">
+                          <AspectRatio ratio={16/10} className="overflow-hidden">
                             <img
                               src={image}
                               alt={`AI-powered marketing ${index + 1}`}
                               className="w-full h-full object-cover transition-all duration-700 hover:scale-110"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent flex items-end">
-                              <div className="p-4 text-white text-left">
-                                <p className="text-sm font-medium">
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end">
+                              <div className="p-6 text-white text-left">
+                                <p className="text-base md:text-lg font-semibold tracking-wide">
                                   {index === 0 ? "AI-Driven Campaign Analytics" : 
                                    index === 1 ? "Data-Powered Marketing Strategy" : 
                                    index === 2 ? "Neural Network Optimization" : 
@@ -119,13 +120,13 @@ const HeroSection = () => {
                                 </p>
                               </div>
                             </div>
-                          </div>
+                          </AspectRatio>
                         </CarouselItem>
                       ))}
                     </CarouselContent>
                     <div className="absolute inset-0 flex items-center justify-between p-2 z-10">
-                      <CarouselPrevious className="h-8 w-8 left-2 bg-white/80 backdrop-blur-sm hover:bg-white" />
-                      <CarouselNext className="h-8 w-8 right-2 bg-white/80 backdrop-blur-sm hover:bg-white" />
+                      <CarouselPrevious className="h-10 w-10 left-3 bg-white/80 backdrop-blur-sm hover:bg-white shadow-md border-0" />
+                      <CarouselNext className="h-10 w-10 right-3 bg-white/80 backdrop-blur-sm hover:bg-white shadow-md border-0" />
                     </div>
                   </Carousel>
                   
