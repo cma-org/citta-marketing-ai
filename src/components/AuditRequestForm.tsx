@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -8,6 +8,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { toast } from '@/hooks/use-toast';
+import { Loader2 } from 'lucide-react';
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -20,6 +21,8 @@ const formSchema = z.object({
 type FormValues = z.infer<typeof formSchema>;
 
 const AuditRequestForm = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -32,18 +35,48 @@ const AuditRequestForm = () => {
   });
 
   const onSubmit = async (data: FormValues) => {
-    // This would connect to your actual API endpoint in production
-    console.log('Form submitted:', data);
+    setIsSubmitting(true);
     
-    // Simulate API call with timeout
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    toast({
-      title: "Audit Request Received",
-      description: "Thank you! Our team will contact you within 24 hours to schedule your free audit.",
-    });
-    
-    form.reset();
+    try {
+      // Google Apps Script web app URL
+      // This URL needs to be replaced with the actual deployed Google Apps Script web app URL
+      const scriptUrl = "https://script.google.com/macros/s/AKfycbyrdksidzFCZ3_nBYy4acP3D0wIIuJxmgU7ZI_nxAM2-EOGwxBxXJLw63MhNINAgjmH/exec";
+      
+      // Prepare form data for submission
+      const formData = new FormData();
+      Object.entries(data).forEach(([key, value]) => {
+        formData.append(key, value);
+      });
+      
+      // Add timestamp
+      formData.append('timestamp', new Date().toISOString());
+      
+      // Send data to Google Sheets
+      const response = await fetch(scriptUrl, {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors', // This is required for Google Apps Script
+      });
+      
+      // Since we're using no-cors mode, we can't get a real response
+      // We'll assume success unless an error is thrown
+      
+      toast({
+        title: "Audit Request Received",
+        description: "Thank you! Our team will contact you within 24 hours to schedule your free audit.",
+      });
+      
+      form.reset();
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast({
+        title: "Submission Error",
+        description: "There was a problem submitting your request. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -123,8 +156,19 @@ const AuditRequestForm = () => {
           )}
         />
 
-        <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700">
-          Submit Request
+        <Button 
+          type="submit" 
+          className="w-full bg-blue-600 hover:bg-blue-700"
+          disabled={isSubmitting}
+        >
+          {isSubmitting ? (
+            <>
+              <Loader2 className="mr-2 h-4 w-4 animate-spin" /> 
+              Submitting...
+            </>
+          ) : (
+            'Submit Request'
+          )}
         </Button>
       </form>
     </Form>
