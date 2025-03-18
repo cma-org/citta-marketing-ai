@@ -2,6 +2,7 @@
 import React, { useEffect } from 'react';
 import { BadgeCheck, BarChart2, Brain, Cpu, Shield, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const features = [
   {
@@ -122,9 +123,11 @@ const AboutSection = () => {
               </div>
               
               <div className="pt-6 reveal">
-                <Button className="bg-blue-600 text-white hover:bg-blue-700 rounded-full px-6 py-6 text-base shadow-md transition-all">
-                  Learn More About Our Approach
-                </Button>
+                <Link to="/about">
+                  <Button className="bg-blue-600 text-white hover:bg-blue-700 rounded-full px-6 py-6 text-base shadow-md transition-all">
+                    Discover Our AI-Driven Approach
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

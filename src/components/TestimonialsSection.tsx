@@ -5,23 +5,23 @@ import { ChevronLeft, ChevronRight, Star, Users } from 'lucide-react';
 
 const testimonials = [
   {
-    quote: "The AI-powered insights transformed our marketing approach completely. We've seen a 3x ROI since partnering with SynapseAI.",
-    author: "Sarah Johnson",
-    position: "CMO at TechVision",
+    quote: "CittaAI's AI-powered content strategy completely transformed our digital presence. We've seen a 4x growth in engagement since partnering with them.",
+    author: "Priya Reddy",
+    position: "CMO at TechVeda Solutions",
     avatar: "https://randomuser.me/api/portraits/women/32.jpg",
     logo: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
   },
   {
-    quote: "Their predictive analytics helped us identify market opportunities we would have otherwise missed. Truly game-changing for our business.",
-    author: "Michael Chen",
-    position: "Director of Growth at StartupHub",
+    quote: "Their predictive analytics helped us identify untapped market segments in Hyderabad that we would have otherwise missed. A true game-changer for our business.",
+    author: "Vikram Sharma",
+    position: "Director of Growth at HydStartups",
     avatar: "https://randomuser.me/api/portraits/men/32.jpg",
     logo: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
   },
   {
-    quote: "The personalized AI marketing campaigns doubled our conversion rates in just three months. The team's expertise is unmatched.",
-    author: "Emma Williams",
-    position: "VP Marketing at NexGen",
+    quote: "The personalized AI marketing campaigns created by CittaAI doubled our conversion rates in just two months. Their expertise in the Hyderabad market is unmatched.",
+    author: "Ananya Desai",
+    position: "Head of Digital at GreenTech Innovations",
     avatar: "https://randomuser.me/api/portraits/women/44.jpg",
     logo: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
   }
@@ -74,10 +74,10 @@ const TestimonialsSection = () => {
             Success Stories
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            What Our Clients Are Saying
+            What Our Hyderabad Clients Are Saying
           </h2>
           <p className="text-gray-600 text-lg">
-            Discover how our AI-powered marketing solutions have transformed businesses across industries.
+            Discover how our AI-powered marketing solutions have transformed businesses across Hyderabad.
           </p>
         </div>
         

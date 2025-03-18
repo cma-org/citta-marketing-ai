@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { ArrowRight, BarChart2, Bot, TrendingUp } from 'lucide-react';
 import AuditRequestForm from './AuditRequestForm';
+import { Link } from 'react-router-dom';
 
 const HeroSection = () => {
   const elementsRef = useRef<(HTMLDivElement | null)[]>([]);
@@ -61,9 +62,11 @@ const HeroSection = () => {
                     <AuditRequestForm />
                   </DialogContent>
                 </Dialog>
-                <Button variant="outline" className="border-gray-300 rounded-full px-6 py-6 text-base transition-all hover-card-animation">
-                  View Our Work
-                </Button>
+                <Link to="/showcase">
+                  <Button variant="outline" className="border-gray-300 rounded-full px-6 py-6 text-base transition-all hover-card-animation">
+                    Showcase Our Work
+                  </Button>
+                </Link>
               </div>
               
               <div className="grid grid-cols-3 gap-4 pt-6 reveal">

@@ -10,20 +10,20 @@ const contactMethods = [
   {
     icon: Mail,
     title: 'Email',
-    content: 'hello@synapseai.com',
-    href: 'mailto:hello@synapseai.com'
+    content: 'team@influenceai.in',
+    href: 'mailto:team@influenceai.in'
   },
   {
     icon: Phone,
     title: 'Phone',
-    content: '+1 (555) 123-4567',
-    href: 'tel:+15551234567'
+    content: '+91 8919333347, 8919492742',
+    href: 'tel:+918919333347'
   },
   {
     icon: MapPin,
     title: 'Office',
-    content: '123 AI Avenue, San Francisco, CA',
-    href: 'https://maps.google.com'
+    content: '3rd floor, Kanakadurga mansion, KPHB Vth phase, Hyderabad',
+    href: 'https://www.google.com/search?q=CITTA+MARKETING+AGENCY&stick=H4sIAAAAAAAA_-NgU1I1qDBOSk6yNDQzM0w0NEpLMkyxMqgwMTM3NzUwS7EwNbFMSU1NXcQq5uwZEuKo4OsY5O0a4unnruDo7urnHAkAXAEPikIAAAA&hl=en&mat=CW3xXgtQNAiPElYBmzl_pVpQvmsuF_y5YYtEpXKpxsbJMFldiZ83c2LXe_4vym17rI7oBkTUVplfD_a0qR1Q7Eru_3hdUlbZ2134IM8Ul32DCI5y07zVJfNIIcFiRfbwJA&authuser=0'
   }
 ];
 
@@ -107,6 +107,8 @@ const ContactSection = () => {
                   key={index}
                   href={method.href}
                   className="flex items-start hover-card-animation p-4 rounded-lg hover:bg-blue-50/50 transition-colors"
+                  target={method.icon === MapPin ? "_blank" : undefined}
+                  rel={method.icon === MapPin ? "noopener noreferrer" : undefined}
                 >
                   <div className="bg-blue-100 rounded-full p-3 mr-4">
                     <method.icon className="h-5 w-5 text-blue-600" />
