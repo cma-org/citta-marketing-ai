@@ -36,13 +36,15 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="relative overflow-hidden scroll-container">
+    <div className="relative overflow-hidden scroll-container bg-gradient-to-b from-blue-50 via-white to-blue-50">
       <Navbar />
-      <HeroSection />
-      <ServicesSection />
-      <AboutSection />
-      <TestimonialsSection />
-      <ContactSection />
+      <div className="space-y-0">
+        <HeroSection />
+        <ServicesSection />
+        <AboutSection />
+        <TestimonialsSection />
+        <ContactSection />
+      </div>
       <Footer />
       <ScrollToTop />
     </div>

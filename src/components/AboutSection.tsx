@@ -3,6 +3,13 @@ import React, { useEffect } from 'react';
 import { BadgeCheck, BarChart2, Brain, Cpu, Shield, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+
+const aboutImages = [
+  "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+  "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+  "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+];
 
 const features = [
   {
@@ -47,20 +54,30 @@ const AboutSection = () => {
   }, []);
 
   return (
-    <section id="about" className="py-20 md:py-32 overflow-hidden">
+    <section id="about" className="py-16 md:py-24 overflow-hidden bg-gradient-to-r from-indigo-50 via-white to-blue-50">
       <div className="container px-4 sm:px-6 lg:px-8 mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
           <div className="md:col-span-5 reveal">
             <div className="relative">
-              <div className="rounded-2xl bg-gradient-to-br from-gray-100 to-blue-100 p-1 shadow-lg overflow-hidden">
+              <div className="rounded-2xl bg-gradient-to-br from-indigo-200 to-blue-200 p-2 shadow-lg overflow-hidden">
                 <div className="bg-white rounded-xl overflow-hidden">
-                  <div className="aspect-w-3 aspect-h-4 relative overflow-hidden">
-                    <img
-                      src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                      alt="Team working on AI marketing solutions"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
+                  <Carousel className="w-full">
+                    <CarouselContent>
+                      {aboutImages.map((image, index) => (
+                        <CarouselItem key={index}>
+                          <div className="aspect-w-4 aspect-h-5 relative overflow-hidden">
+                            <img
+                              src={image}
+                              alt={`Team working on AI marketing solutions ${index + 1}`}
+                              className="w-full h-full object-cover transition-all duration-700 hover:scale-110"
+                            />
+                          </div>
+                        </CarouselItem>
+                      ))}
+                    </CarouselContent>
+                    <CarouselPrevious className="absolute left-2 top-1/2 transform -translate-y-1/2 z-10" />
+                    <CarouselNext className="absolute right-2 top-1/2 transform -translate-y-1/2 z-10" />
+                  </Carousel>
                 </div>
               </div>
               
@@ -95,7 +112,7 @@ const AboutSection = () => {
           
           <div className="md:col-span-7">
             <div className="space-y-6 max-w-2xl">
-              <div className="inline-flex items-center rounded-full bg-blue-50 px-3 py-1 text-sm font-medium text-blue-700 reveal">
+              <div className="inline-flex items-center rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-700 reveal">
                 <BadgeCheck className="h-4 w-4 mr-1" />
                 Why Choose Us
               </div>
@@ -110,9 +127,9 @@ const AboutSection = () => {
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
                 {features.map((feature, index) => (
-                  <div key={index} className="flex items-start reveal" style={{ transitionDelay: `${index * 0.1}s` }}>
-                    <div className="flex-shrink-0 bg-blue-50 rounded-lg w-10 h-10 flex items-center justify-center mr-4">
-                      <feature.icon className="h-5 w-5 text-blue-600" />
+                  <div key={index} className="flex items-start reveal hover:bg-blue-50/50 p-3 rounded-lg transition-all" style={{ transitionDelay: `${index * 0.1}s` }}>
+                    <div className="flex-shrink-0 bg-blue-100 rounded-lg w-12 h-12 flex items-center justify-center mr-4">
+                      <feature.icon className="h-6 w-6 text-blue-600" />
                     </div>
                     <div>
                       <h3 className="text-lg font-medium mb-1">{feature.title}</h3>
@@ -124,7 +141,7 @@ const AboutSection = () => {
               
               <div className="pt-6 reveal">
                 <Link to="/about">
-                  <Button className="bg-blue-600 text-white hover:bg-blue-700 rounded-full px-6 py-6 text-base shadow-md transition-all">
+                  <Button className="bg-blue-600 text-white hover:bg-blue-700 rounded-full px-6 py-6 text-base shadow-md transition-all animate-pulse-subtle">
                     Discover Our AI-Driven Approach
                   </Button>
                 </Link>

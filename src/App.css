@@ -1,7 +1,7 @@
+
 #root {
-  max-width: 1280px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
 }
 
@@ -39,4 +39,44 @@
 
 .read-the-docs {
   color: #888;
+}
+
+/* New animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 3s ease-in-out infinite;
+}
+
+/* Image hover effect */
+.image-hover-effect {
+  transition: transform 0.5s ease-in-out;
+}
+
+.image-hover-effect:hover {
+  transform: scale(1.05);
+}
+
+/* Better spacing for sections */
+.space-y-0 > * + * {
+  margin-top: 0;
+}
+
+/* Carousel navigation enhancements */
+.carousel-nav-button {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }

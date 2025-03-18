@@ -5,6 +5,14 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { ArrowRight, BarChart2, Bot, TrendingUp } from 'lucide-react';
 import AuditRequestForm from './AuditRequestForm';
 import { Link } from 'react-router-dom';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+
+const heroImages = [
+  "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+  "https://images.unsplash.com/photo-1661956602116-aa6865609028?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+  "https://images.unsplash.com/photo-1581089781785-603411fa81e5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+  "https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+];
 
 const HeroSection = () => {
   const elementsRef = useRef<(HTMLDivElement | null)[]>([]);
@@ -29,12 +37,12 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="pt-28 pb-20 md:pt-32 md:pb-28 overflow-hidden">
+    <section className="pt-24 pb-12 md:pt-28 md:pb-16 overflow-hidden bg-gradient-to-r from-blue-50 via-white to-blue-100">
       <div className="container px-4 sm:px-6 lg:px-8 mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
           <div className="md:col-span-7">
             <div className="space-y-6 max-w-2xl">
-              <div className="inline-flex items-center rounded-full bg-blue-50 px-3 py-1 text-sm font-medium text-blue-700 reveal">
+              <div className="inline-flex items-center rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-700 reveal">
                 <span className="flex h-2 w-2 rounded-full bg-blue-600 mr-2"></span>
                 Revolutionizing Digital Marketing
               </div>
@@ -51,7 +59,7 @@ const HeroSection = () => {
               <div className="flex flex-col sm:flex-row gap-4 pt-2 reveal">
                 <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
                   <DialogTrigger asChild>
-                    <Button className="bg-blue-600 text-white hover:bg-blue-700 rounded-full px-6 py-6 text-base shadow-lg transition-all">
+                    <Button className="bg-blue-600 text-white hover:bg-blue-700 rounded-full px-6 py-6 text-base shadow-lg transition-all animate-pulse-subtle">
                       Get a Free Audit <ArrowRight className="ml-2 h-5 w-5" />
                     </Button>
                   </DialogTrigger>
@@ -88,36 +96,48 @@ const HeroSection = () => {
           
           <div className="md:col-span-5 reveal">
             <div className="relative">
-              <div className="rounded-2xl bg-gradient-to-br from-blue-100 to-sky-100 p-1 shadow-lg overflow-hidden">
+              <div className="rounded-2xl bg-gradient-to-br from-blue-200 to-sky-200 p-2 shadow-lg overflow-hidden">
                 <div className="rounded-xl overflow-hidden glass-panel">
-                  <div className="aspect-w-5 aspect-h-4 relative overflow-hidden">
-                    <img
-                      src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                      alt="Digital marketing team collaboration"
-                      className="w-full h-full object-cover"
-                    />
-                    
-                    {/* Floating UI elements */}
-                    <div className="absolute top-1/4 -right-8 bg-white/90 backdrop-blur-sm rounded-lg p-3 shadow-lg animate-float">
-                      <div className="flex items-center">
-                        <TrendingUp className="h-4 w-4 text-green-500 mr-2" />
-                        <span className="text-xs font-medium">Conversion +28%</span>
-                      </div>
+                  <Carousel className="w-full">
+                    <CarouselContent>
+                      {heroImages.map((image, index) => (
+                        <CarouselItem key={index}>
+                          <div className="aspect-w-5 aspect-h-4 relative overflow-hidden">
+                            <img
+                              src={image}
+                              alt={`Digital marketing scene ${index + 1}`}
+                              className="w-full h-full object-cover transition-all duration-700 hover:scale-110"
+                            />
+                          </div>
+                        </CarouselItem>
+                      ))}
+                    </CarouselContent>
+                    <div className="absolute inset-0 flex items-center justify-between p-2 z-10">
+                      <CarouselPrevious className="h-8 w-8 left-2" />
+                      <CarouselNext className="h-8 w-8 right-2" />
                     </div>
-                    
-                    <div className="absolute bottom-1/4 -left-6 bg-white/90 backdrop-blur-sm rounded-lg p-3 shadow-lg animate-float" style={{ animationDelay: '1s' }}>
-                      <div className="flex items-center">
-                        <BarChart2 className="h-4 w-4 text-blue-500 mr-2" />
-                        <span className="text-xs font-medium">Engagement +65%</span>
-                      </div>
+                  </Carousel>
+                  
+                  {/* Floating UI elements */}
+                  <div className="absolute top-1/4 -right-8 bg-white/90 backdrop-blur-sm rounded-lg p-3 shadow-lg animate-float">
+                    <div className="flex items-center">
+                      <TrendingUp className="h-4 w-4 text-green-500 mr-2" />
+                      <span className="text-xs font-medium">Conversion +28%</span>
+                    </div>
+                  </div>
+                  
+                  <div className="absolute bottom-1/4 -left-6 bg-white/90 backdrop-blur-sm rounded-lg p-3 shadow-lg animate-float" style={{ animationDelay: '1s' }}>
+                    <div className="flex items-center">
+                      <BarChart2 className="h-4 w-4 text-blue-500 mr-2" />
+                      <span className="text-xs font-medium">Engagement +65%</span>
                     </div>
                   </div>
                 </div>
               </div>
               
               {/* Background decorative elements */}
-              <div className="absolute -z-10 top-1/2 -right-12 w-24 h-24 rounded-full bg-blue-200/50 blur-2xl"></div>
-              <div className="absolute -z-10 bottom-1/3 -left-8 w-20 h-20 rounded-full bg-sky-200/50 blur-2xl"></div>
+              <div className="absolute -z-10 top-1/2 -right-12 w-24 h-24 rounded-full bg-blue-200/80 blur-2xl"></div>
+              <div className="absolute -z-10 bottom-1/3 -left-8 w-20 h-20 rounded-full bg-sky-200/80 blur-2xl"></div>
             </div>
           </div>
         </div>
