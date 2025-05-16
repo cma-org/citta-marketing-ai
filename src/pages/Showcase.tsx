@@ -24,7 +24,7 @@ const showcaseItems = [
   {
     title: "Intelligent Chatbot Solutions",
     description: "Developing AI-powered customer service chatbots for a local financial services company, reducing response time by 78%.",
-    image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     icon: Bot,
     clientName: "GreenTech Innovations"
   },
@@ -38,14 +38,14 @@ const showcaseItems = [
   {
     title: "Automated SEO Optimization",
     description: "Implementing AI-powered SEO tools for a real estate company in Hyderabad, improving organic traffic by 210%.",
-    image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     icon: TrendingUp,
     clientName: "Hyderabad Homes"
   },
   {
     title: "Performance Marketing Engine",
     description: "Building an AI-driven performance marketing system for a local retail chain, reducing CAC by 35% while increasing ROAS.",
-    image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     icon: Zap,
     clientName: "ShopSmart Retail"
   }

@@ -26,9 +26,9 @@ const Navbar = () => {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-smooth ${isScrolled ? 'py-3 bg-white/90 backdrop-blur-md shadow-sm' : 'py-5 bg-transparent'}`}>
       <div className="container px-4 sm:px-6 lg:px-8 mx-auto flex justify-between items-center">
-        <a href="#" className="flex items-center">
+        <Link to="/" className="flex items-center">
           <span className="font-display text-xl sm:text-2xl font-bold">Citta<span className="text-blue-600">AI</span></span>
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
@@ -61,7 +61,7 @@ const Navbar = () => {
           <a href="#testimonials" className="text-sm font-medium py-2 hover:text-blue-600 transition-colors" onClick={toggleMenu}>Testimonials</a>
           <a href="#contact" className="text-sm font-medium py-2 hover:text-blue-600 transition-colors" onClick={toggleMenu}>Contact</a>
           <Link to="/contact">
-            <Button className="bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-all w-full">
+            <Button className="bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-all w-full" onClick={toggleMenu}>
               Get Started
             </Button>
           </Link>
