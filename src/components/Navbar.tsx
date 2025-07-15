@@ -38,7 +38,7 @@ const Navbar = () => {
           <a href="#contact" className="text-sm font-medium hover:text-blue-600 transition-colors">Contact</a>
           <Link to="/contact">
             <Button className="bg-blue-600 text-white rounded-full px-5 hover:bg-blue-700 transition-all shadow-sm">
-               <a href="#contact" className="text-sm font-medium hover:text-blue-600 transition-colors">Get Started</a>
+               Get started
             </Button>
           </Link>
         </nav>
