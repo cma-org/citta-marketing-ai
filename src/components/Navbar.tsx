@@ -60,7 +60,7 @@ const Navbar = () => {
           <a href="#about" className="text-sm font-medium py-2 hover:text-blue-600 transition-colors" onClick={toggleMenu}>About</a>
           <a href="#testimonials" className="text-sm font-medium py-2 hover:text-blue-600 transition-colors" onClick={toggleMenu}>Testimonials</a>
           <a href="#contact" className="text-sm font-medium py-2 hover:text-blue-600 transition-colors" onClick={toggleMenu}>Contact</a>
-          <Link to="/contact">
+          <Link to="#contact">
             <Button className="bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-all w-full" onClick={toggleMenu}>
               Get Started
             </Button>
