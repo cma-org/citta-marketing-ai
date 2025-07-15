@@ -36,7 +36,7 @@ const Navbar = () => {
           <a href="#about" className="text-sm font-medium hover:text-blue-600 transition-colors">About</a>
           <a href="#testimonials" className="text-sm font-medium hover:text-blue-600 transition-colors">Testimonials</a>
           <a href="#contact" className="text-sm font-medium hover:text-blue-600 transition-colors">Contact</a>
-          <a to="#contact">
+          <a href="#contact">
             <Button className="bg-blue-600 text-white rounded-full px-5 hover:bg-blue-700 transition-all shadow-sm">
                Get started
             </Button>
@@ -60,7 +60,7 @@ const Navbar = () => {
           <a href="#about" className="text-sm font-medium py-2 hover:text-blue-600 transition-colors" onClick={toggleMenu}>About</a>
           <a href="#testimonials" className="text-sm font-medium py-2 hover:text-blue-600 transition-colors" onClick={toggleMenu}>Testimonials</a>
           <a href="#contact" className="text-sm font-medium py-2 hover:text-blue-600 transition-colors" onClick={toggleMenu}>Contact</a>
-          <a to="#contact">
+          <a href="#contact">
             <Button className="bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-all w-full" onClick={toggleMenu}>
               Get Started
             </Button>
