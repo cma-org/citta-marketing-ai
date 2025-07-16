@@ -99,6 +99,11 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+
 /* Container for scrolling elements */
 .scroll-container {
   scroll-behavior: smooth;
