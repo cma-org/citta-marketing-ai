@@ -78,6 +78,10 @@ const Showcase = () => {
       
       <section className="pt-32 pb-20 md:pt-40 md:pb-28">
         <div className="container px-4 sm:px-6 lg:px-8 mx-auto">
+          <Link to="/" className="inline-flex items-center text-blue-600 mb-8 group reveal">
+          <ArrowLeft className="mr-2 h-4 w-4 group-hover:-translate-x-1 transition-transform" />
+          <span>Back to all services</span>
+        </Link>
           <div className="text-center max-w-3xl mx-auto mb-16 reveal">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               Our AI-Powered <span className="text-gradient">Success Stories</span>
