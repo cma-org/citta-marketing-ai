@@ -32,7 +32,6 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <a href="/" className="text-sm font-medium hover:text-blue-600 transition-colors">Home</a>
           <a href="#services" className="text-sm font-medium hover:text-blue-600 transition-colors">Services</a>
           <a href="#about" className="text-sm font-medium hover:text-blue-600 transition-colors">About</a>
           <a href="#testimonials" className="text-sm font-medium hover:text-blue-600 transition-colors">Testimonials</a>
