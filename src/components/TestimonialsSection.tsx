@@ -7,19 +7,16 @@ const testimonials = [{
   quote: "CittaAI's AI-powered content strategy completely transformed our digital presence. We've seen a 4x growth in engagement since partnering with them.",
   author: "Priya Reddy",
   position: "CMO at TechVeda Solutions",
-  avatar: "https://randomuser.me/api/portraits/women/32.jpg",
   logo: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
 }, {
   quote: "Their predictive analytics helped us identify untapped market segments in Hyderabad that we would have otherwise missed. A true game-changer for our business.",
   author: "Vikram Sharma",
   position: "Director of Growth at HydStartups",
-  avatar: "https://randomuser.me/api/portraits/men/32.jpg",
   logo: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
 }, {
   quote: "The personalized AI marketing campaigns created by CittaAI doubled our conversion rates in just two months. Their expertise in the Hyderabad market is unmatched.",
   author: "Ananya Desai",
   position: "Head of Digital at GreenTech Innovations",
-  avatar: "https://randomuser.me/api/portraits/women/44.jpg",
   logo: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
 }];
 
@@ -98,11 +95,6 @@ const TestimonialsSection = () => {
                   </blockquote>
                   
                   <div className="flex flex-col items-center">
-                    <img 
-                      src={testimonial.avatar} 
-                      alt={testimonial.author} 
-                      className="w-20 h-20 rounded-full object-cover mb-4 border-4 border-white shadow-lg transition-transform duration-500 hover:scale-110" 
-                    />
                     <div className="text-center">
                       <p className="font-semibold text-lg">{testimonial.author}</p>
                       <p className="text-gray-600">{testimonial.position}</p>
