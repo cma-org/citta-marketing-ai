@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, BarChart2, Bot, Brain, Target, TrendingUp, Zap } from 'lucide-react';
+import { ArrowLeft, ArrowRight, BarChart2, Bot, Brain, Target, TrendingUp, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const showcaseItems = [
