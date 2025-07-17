@@ -119,14 +119,6 @@ const Showcase = () => {
               </div>
             ))}
           </div>
-          
-          <div className="text-center reveal">
-            <Link to="/#contact">
-              <Button className="bg-blue-600 text-white hover:bg-blue-700 rounded-full px-8 py-6 text-base shadow-lg">
-                Start Your AI Marketing Journey
-              </Button>
-            </Link>
-          </div>
         </div>
       </section>
       
