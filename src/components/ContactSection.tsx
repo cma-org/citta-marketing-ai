@@ -22,7 +22,7 @@ const contactMethods = [
   {
     icon: MapPin,
     title: 'Office',
-    content: '3rd floor, Kanakadurga mansion, KPHB Vth phase, Hyderabad',
+    content: '3rd floor, Kanakadurga mansion, KPHB 5th phase, Hyderabad',
     href: 'https://www.google.com/search?q=CITTA+MARKETING+AGENCY&stick=H4sIAAAAAAAA_-NgU1I1qDBOSk6yNDQzM0w0NEpLMkyxMqgwMTM3NzUwS7EwNbFMSU1NXcQq5uwZEuKo4OsY5O0a4unnruDo7urnHAkAXAEPikIAAAA&hl=en&mat=CW3xXgtQNAiPElYBmzl_pVpQvmsuF_y5YYtEpXKpxsbJMFldiZ83c2LXe_4vym17rI7oBkTUVplfD_a0qR1Q7Eru_3hdUlbZ2134IM8Ul32DCI5y07zVJfNIIcFiRfbwJA&authuser=0'
   }
 ];
