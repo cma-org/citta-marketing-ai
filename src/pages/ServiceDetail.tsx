@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import Navbar from '@/components/Navbar';
 import { Instagram, Target, Bot, Users, Smartphone, Code, FileText, ChartBar, TrendingUp, Globe, Mail } from 'lucide-react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { useToast } from '@/components/ui/use-toast';
@@ -639,14 +640,16 @@ const ServiceDetail = () => {
   
   if (!serviceData) {
     return (
-      <Navbar />
-      <div className="container mx-auto px-4 py-32 text-center">
-        <h2 className="text-3xl font-bold mb-4">Service Not Found</h2>
-        <p className="mb-8">Sorry, the service you're looking for doesn't exist.</p>
-        <Link to="/">
-          <Button>Back to Home</Button>
-        </Link>
-      </div>
+      <>
+        <Navbar />
+        <div className="container mx-auto px-4 py-32 text-center">
+          <h2 className="text-3xl font-bold mb-4">Service Not Found</h2>
+          <p className="mb-8">Sorry, the service you're looking for doesn't exist.</p>
+          <Link to="/">
+            <Button>Back to Home</Button>
+          </Link>
+        </div>
+      </>
     );
   }
 
