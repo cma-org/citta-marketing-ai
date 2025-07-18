@@ -139,13 +139,13 @@ const AboutSection = () => {
                 ))}
               </div>
               
-              <div className="pt-6 reveal">
+              {/* <div className="pt-6 reveal">
                 <Link to="/about">
                   <Button className="bg-blue-600 text-white hover:bg-blue-700 rounded-full px-6 py-6 text-base shadow-md transition-all animate-pulse-subtle">
                     Discover Our AI-Driven Approach
                   </Button>
                 </Link>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
