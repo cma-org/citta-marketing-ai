@@ -795,9 +795,9 @@ const ServiceDetail = () => {
                         <CheckCircle className="h-4 w-4 mr-2" />
                         <span>{story.results}</span>
                       </div>
-                      {/* <Button variant="outline" className="w-full mt-2 border-gray-200">
+                      <Button variant="outline" className="w-full mt-2 border-gray-200">
                         Read Full Case Study
-                      </Button> */}
+                      </Button>
                     </div>
                   </div>
                 </CarouselItem>
