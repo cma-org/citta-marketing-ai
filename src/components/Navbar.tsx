@@ -28,7 +28,7 @@ const Navbar = () => {
       <div className="container px-4 sm:px-6 lg:px-8 mx-auto flex justify-between items-center">
         <Link to="/" className="flex items-center">
           <img 
-            src="/lovable-uploads/e7e5db33-4eef-4dc2-bd14-1a65ff429dd4.png" 
+            src="/images/Logo.png" 
             alt="CittaAI Logo" 
             className="h-8 sm:h-10 w-auto"
           />
