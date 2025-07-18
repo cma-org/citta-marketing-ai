@@ -110,11 +110,11 @@ const Showcase = () => {
                   <p className="text-gray-600 mb-4 text-sm">{item.description}</p>
                   <p className="text-blue-600 font-medium text-sm mb-4">Client: {item.clientName}</p>
                   
-                  <Link to={`/contact`}>
+                  {/* <Link to={`/contact`}>
                     <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
                       Learn More <ArrowRight className="ml-1 h-4 w-4" />
                     </Button>
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
             ))}
