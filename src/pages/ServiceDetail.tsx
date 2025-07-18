@@ -26,7 +26,7 @@ const serviceDetails = {
       "Brand identity creation with AI creative assistance",
       "Implementation and continuous optimization"
     ],
-    image: "https://images.unsplash.com/photo-1606765962248-7ff407b51667?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
     caseStudy: {
       client: "E-commerce Startup",
       challenge: "Needed to establish a distinctive brand in a crowded market with limited resources",
@@ -52,7 +52,7 @@ const serviceDetails = {
       "Engagement monitoring and response management",
       "Continuous optimization based on performance data"
     ],
-    image: "https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1611926653458-09294b3142bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
     caseStudy: {
       client: "Retail Brand Chain",
       challenge: "Inconsistent social media presence and low engagement across multiple platforms",
@@ -78,7 +78,7 @@ const serviceDetails = {
       "Automated bid management and budget allocation",
       "Continuous testing and optimization"
     ],
-    image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
     caseStudy: {
       client: "SaaS Company",
       challenge: "High cost per acquisition and low conversion rates from PPC campaigns",
@@ -104,7 +104,7 @@ const serviceDetails = {
       "Integration with existing systems and platforms",
       "Deployment, testing, and continuous improvement"
     ],
-    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
     caseStudy: {
       client: "Professional Services Firm",
       challenge: "Manual, time-consuming marketing processes limiting team productivity",
@@ -130,7 +130,7 @@ const serviceDetails = {
       "Technical SEO improvements",
       "Off-page strategy development and execution"
     ],
-    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
     caseStudy: {
       client: "Educational Platform",
       challenge: "Low organic traffic and poor search visibility despite quality content",
@@ -156,7 +156,7 @@ const serviceDetails = {
       "Automated deployment and testing",
       "Performance analysis and continuous optimization"
     ],
-    image: "https://images.unsplash.com/photo-1596526131083-e8c633c948d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
     caseStudy: {
       client: "Online Retailer",
       challenge: "Low email engagement rates and poor conversion performance",
@@ -182,7 +182,7 @@ const serviceDetails = {
       "Campaign management and content coordination",
       "Performance tracking and optimization"
     ],
-    image: "https://images.unsplash.com/photo-1557838923-2985c318be48?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
     caseStudy: {
       client: "Beauty Brand",
       challenge: "Difficulty finding authentic influencers who resonated with their target audience",
@@ -208,7 +208,7 @@ const serviceDetails = {
       "Content creation and personalization",
       "Deployment, monitoring, and optimization"
     ],
-    image: "https://images.unsplash.com/photo-1559307429-4eb0be9c63cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1611605698335-8b1569810432?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
     caseStudy: {
       client: "Service Provider",
       challenge: "Needed to engage customers on their preferred platform with limited staff resources",
@@ -234,7 +234,7 @@ const serviceDetails = {
       "Testing and optimization",
       "Deployment and ongoing performance monitoring"
     ],
-    image: "https://images.unsplash.com/photo-1593720213428-28a5b9e94613?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
     caseStudy: {
       client: "Fintech Startup",
       challenge: "Needed a high-conversion website that could adapt to different user segments",
@@ -260,7 +260,7 @@ const serviceDetails = {
       "Publishing and distribution",
       "Performance monitoring and refinement"
     ],
-    image: "https://images.unsplash.com/photo-1591522810850-58128c5fb089?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
     caseStudy: {
       client: "B2B Software Company",
       challenge: "Struggled to produce enough quality content to support marketing efforts",
@@ -286,7 +286,7 @@ const serviceDetails = {
       "Lead capturing and qualification automation",
       "Performance monitoring and optimization"
     ],
-    image: "https://images.unsplash.com/photo-1494176417869-e4b438a3b8bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
     caseStudy: {
       client: "Manufacturing Company",
       challenge: "High volume of leads but low conversion rate due to poor qualification",
@@ -304,7 +304,7 @@ const successStories = {
       challenge: "Entering a saturated market with unclear brand positioning",
       solution: "AI-driven brand identity strategy with market penetration plan",
       results: "178% growth in brand recognition within 3 months",
-      image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80"
     },
     {
       clientName: "Health Plus",
@@ -312,7 +312,7 @@ const successStories = {
       challenge: "Traditional brand struggling to connect with younger demographics",
       solution: "Complete brand refresh with AI-optimized messaging",
       results: "214% increase in engagement from target demographic",
-      image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80"
     }
   ],
   "social-media-management": [
@@ -322,7 +322,7 @@ const successStories = {
       challenge: "Low engagement rates across multiple social platforms",
       solution: "AI-powered content strategy with platform-specific optimization",
       results: "312% increase in engagement and 127% growth in followers",
-      image: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80"
     },
     {
       clientName: "Foodie Delights",
@@ -330,7 +330,7 @@ const successStories = {
       challenge: "Inconsistent brand voice and content strategy",
       solution: "Unified AI content calendar with scheduled posts",
       results: "245% growth in profile visits and 89% increase in website traffic",
-      image: "https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80"
     }
   ],
   "ppc-advertising": [
@@ -340,7 +340,7 @@ const successStories = {
       challenge: "High cost per acquisition with minimal qualified leads",
       solution: "AI-optimized ad targeting with dynamic budget allocation",
       results: "68% reduction in CPA and 147% increase in qualified leads",
-      image: "https://images.unsplash.com/photo-1556742031-c6961e8560f0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80"
     },
     {
       clientName: "EduLearn",
@@ -348,7 +348,7 @@ const successStories = {
       challenge: "Low conversion rates from ad campaigns",
       solution: "AI-driven audience segmentation with personalized ad content",
       results: "192% improvement in conversion rate and 43% lower ad spend",
-      image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80"
     }
   ],
   "business-automation": [
@@ -358,7 +358,7 @@ const successStories = {
       challenge: "Manual processes consuming team resources",
       solution: "End-to-end workflow automation with AI optimization",
       results: "76% reduction in manual tasks and 34% increase in efficiency",
-      image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80"
     },
     {
       clientName: "FinancePlus",
@@ -366,7 +366,7 @@ const successStories = {
       challenge: "Time-consuming customer onboarding process",
       solution: "Automated customer journey with AI verification",
       results: "89% faster onboarding and 47% higher completion rate",
-      image: "https://images.unsplash.com/photo-1589666564459-93cdd3ab856e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1554774853-719586f82d77?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80"
     }
   ],
   "seo-services": [
@@ -376,7 +376,7 @@ const successStories = {
       challenge: "Poor search visibility despite quality content",
       solution: "Technical SEO overhaul with AI content optimization",
       results: "246% increase in organic traffic and 183% improvement in conversions",
-      image: "https://images.unsplash.com/photo-1572573980696-3cdbdd9f4609?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80"
     },
     {
       clientName: "Travel Explorer",
@@ -384,7 +384,7 @@ const successStories = {
       challenge: "Unable to compete with larger sites for key terms",
       solution: "AI-driven long-tail keyword strategy with content gap analysis",
       results: "312% growth in search traffic and 64% higher booking rate",
-      image: "https://images.unsplash.com/photo-1493723843671-1d655e66ac1c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80"
     }
   ],
   "email-marketing": [
@@ -394,7 +394,7 @@ const successStories = {
       challenge: "Low open rates and poor campaign performance",
       solution: "AI personalization with send-time optimization",
       results: "217% higher open rates and 136% increase in click-through rates",
-      image: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80"
     },
     {
       clientName: "MembershipClub",
@@ -402,7 +402,7 @@ const successStories = {
       challenge: "High unsubscribe rates and low engagement",
       solution: "Behavioral segmentation with AI content personalization",
       results: "91% reduction in unsubscribes and 167% improvement in retention",
-      image: "https://images.unsplash.com/photo-1616469829941-afb3a03c7133?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80"
     }
   ],
   "influencer-marketing": [
@@ -412,7 +412,7 @@ const successStories = {
       challenge: "Working with misaligned influencers with poor ROI",
       solution: "AI-powered influencer matching and performance prediction",
       results: "215% increase in campaign ROI and 178% higher engagement",
-      image: "https://images.unsplash.com/photo-1590510311830-76b7c327c5bb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80"
     },
     {
       clientName: "GadgetTech",
@@ -420,7 +420,7 @@ const successStories = {
       challenge: "Limited budget for influencer partnerships",
       solution: "Micro-influencer strategy with AI audience analysis",
       results: "346% more efficient spend and 127% better conversion rates",
-      image: "https://images.unsplash.com/photo-1609921212029-bb5a28e60960?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1498049794561-7780e7231661?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80"
     }
   ],
   "whatsapp-marketing": [
@@ -430,7 +430,7 @@ const successStories = {
       challenge: "Low customer response rates to traditional outreach",
       solution: "Personalized WhatsApp campaign with AI-driven timing",
       results: "289% higher engagement and 94% faster response times",
-      image: "https://images.unsplash.com/photo-1544535830-9df3f56801d4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80"
     },
     {
       clientName: "FastFood",
@@ -438,7 +438,7 @@ const successStories = {
       challenge: "Ineffective promotional campaigns",
       solution: "WhatsApp automation with location-based offers",
       results: "167% increase in promotion redemption and 53% higher repeat orders",
-      image: "https://images.unsplash.com/photo-1610438250910-01ca3c46836d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80"
     }
   ],
   "website-development": [
@@ -448,7 +448,7 @@ const successStories = {
       challenge: "Outdated website with poor conversion rates",
       solution: "AI-optimized UX design with personalized user journeys",
       results: "178% increase in lead generation and 63% lower bounce rate",
-      image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1554774853-719586f82d77?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80"
     },
     {
       clientName: "MedicalCenter",
@@ -456,7 +456,7 @@ const successStories = {
       challenge: "Complex appointment booking system confusing users",
       solution: "Streamlined UI with AI-powered appointment recommendations",
       results: "214% increase in online bookings and 76% reduction in booking time",
-      image: "https://images.unsplash.com/photo-1561736778-92e52a7769ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80"
     }
   ],
   "content-creation": [
@@ -466,7 +466,7 @@ const successStories = {
       challenge: "Technical content difficult for clients to understand",
       solution: "AI-assisted content simplification with enhanced readability",
       results: "189% increase in content engagement and 73% higher conversion rate",
-      image: "https://images.unsplash.com/photo-1516383274235-5f42d5c0927b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80"
     },
     {
       clientName: "TechBlog",
@@ -474,7 +474,7 @@ const successStories = {
       challenge: "Inability to produce enough quality content",
       solution: "AI content generation with editorial refinement",
       results: "276% increase in content production and 128% growth in readership",
-      image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80"
     }
   ],
   "lead-generation": [
@@ -484,7 +484,7 @@ const successStories = {
       challenge: "High volume of unqualified leads draining resources",
       solution: "AI-powered lead scoring and qualification",
       results: "163% improvement in lead quality and 41% higher close rate",
-      image: "https://images.unsplash.com/photo-1580328881293-257e3f55d0dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80"
     },
     {
       clientName: "InsurancePro",
@@ -492,7 +492,7 @@ const successStories = {
       challenge: "High customer acquisition costs",
       solution: "Predictive analytics for targeted lead generation",
       results: "237% increase in qualified leads and 52% reduction in acquisition cost",
-      image: "https://images.unsplash.com/photo-1556742031-c6961e8560f0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80"
     }
   ]
 };
