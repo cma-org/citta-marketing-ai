@@ -639,6 +639,7 @@ const ServiceDetail = () => {
   
   if (!serviceData) {
     return (
+      <Navbar />
       <div className="container mx-auto px-4 py-32 text-center">
         <h2 className="text-3xl font-bold mb-4">Service Not Found</h2>
         <p className="mb-8">Sorry, the service you're looking for doesn't exist.</p>
