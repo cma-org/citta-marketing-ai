@@ -381,11 +381,6 @@ const ContactSection = () => {
                     </span>
                   )}
                 </Button>
-                
-                <p className="text-xs text-gray-500 text-center">
-                  By submitting this form, you agree to our privacy policy. 
-                  We'll only use your information to respond to your inquiry.
-                </p>
               </form>
             </div>
           </div>
