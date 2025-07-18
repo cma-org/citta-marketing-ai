@@ -672,7 +672,9 @@ const ServiceDetail = () => {
   };
 
   return (
-    <div className="pt-28 pb-20">
+    <>
+      <Navbar />
+      <div className="pt-28 pb-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <Link to="/#services" className="inline-flex items-center text-blue-600 mb-8 group reveal">
           <ArrowLeft className="mr-2 h-4 w-4 group-hover:-translate-x-1 transition-transform" />
@@ -857,6 +859,7 @@ const ServiceDetail = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
