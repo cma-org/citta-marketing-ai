@@ -40,7 +40,7 @@ const legalLinks = [
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  
+
   return (
     <footer className="bg-blue-600 text-white overflow-hidden">
       <div className="container px-4 sm:px-6 lg:px-8 mx-auto">
@@ -55,7 +55,7 @@ const Footer = () => {
               </p>
               <div className="flex space-x-4">
                 {socialLinks.map((social, index) => (
-                  <a 
+                  <a
                     key={index}
                     href={social.href}
                     className="bg-blue-500/30 hover:bg-blue-500/50 p-2 rounded-full transition-colors"
@@ -67,23 +67,23 @@ const Footer = () => {
                   </a>
                 ))}
               </div>
-              
+
               <div className="mt-8 space-y-4">
                 <div className="flex items-center">
                   <Mail className="h-5 w-5 mr-3 text-blue-300" />
-                  <a href="mailto:team@influenceai.in" className="text-blue-100 hover:text-white transition-colors">
-                    team@influenceai.in
+                  <a href="mailto:info@cittaai.com" className="text-blue-100 hover:text-white transition-colors">
+                    info@cittaai.com
                   </a>
                 </div>
                 <div className="flex items-center">
                   <PhoneCall className="h-5 w-5 mr-3 text-blue-300" />
-                  <a href="tel:+918919333347" className="text-blue-100 hover:text-white transition-colors">
-                    +91 8919333347
+                  <a href="tel:+919392655040" className="text-blue-100 hover:text-white transition-colors">
+                    +91 9392655040
                   </a>
                 </div>
               </div>
             </div>
-            
+
             <div className="md:col-span-2">
               <h3 className="font-medium text-lg mb-4">Company</h3>
               <ul className="space-y-3">
@@ -96,7 +96,7 @@ const Footer = () => {
                 ))}
               </ul>
             </div>
-            
+
             <div className="md:col-span-2">
               <h3 className="font-medium text-lg mb-4">Services</h3>
               <ul className="space-y-3">
@@ -109,7 +109,7 @@ const Footer = () => {
                 ))}
               </ul>
             </div>
-            
+
             <div className="md:col-span-2">
               <h3 className="font-medium text-lg mb-4">Resources</h3>
               <ul className="space-y-3">
@@ -122,7 +122,7 @@ const Footer = () => {
                 ))}
               </ul>
             </div>
-            
+
             <div className="md:col-span-2">
               <h3 className="font-medium text-lg mb-4">Legal</h3>
               <ul className="space-y-3">
@@ -137,7 +137,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        
+
         <div className="border-t border-blue-500/30 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-blue-100 text-sm">

@@ -9,14 +9,14 @@ const contactMethods = [
   {
     icon: Mail,
     title: 'Email',
-    content: 'team@influenceai.in',
-    href: 'mailto:team@influenceai.in'
+    content: 'info@cittaai.com',
+    href: 'mailto:info@cittaai.com'
   },
   {
     icon: Phone,
     title: 'Phone',
-    content: '+91 8919333347, 8919492742',
-    href: 'tel:+918919333347'
+    content: '+91 9392655040',
+    href: 'tel:+919392655040'
   },
   {
     icon: MapPin,
@@ -39,7 +39,7 @@ const ContactSection = () => {
   // Error and success state management for better UX
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [submitSuccess, setSubmitSuccess] = useState(false);
-  
+
   // Rate limiting to prevent spam submissions
   const [lastSubmission, setLastSubmission] = useState<number>(0);
   const SUBMISSION_COOLDOWN = 30000; // 30 seconds between submissions
@@ -52,13 +52,13 @@ const ContactSection = () => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
-    
+
     // Clear any previous error messages when user starts typing
     // This provides immediate feedback and improves user experience
     if (submitError) {
       setSubmitError(null);
     }
-    
+
     // Clear success state if user starts editing after successful submission
     if (submitSuccess) {
       setSubmitSuccess(false);
@@ -67,7 +67,7 @@ const ContactSection = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Rate limiting check to prevent spam submissions
     // Users must wait 30 seconds between form submissions
     const now = Date.now();
@@ -83,14 +83,14 @@ const ContactSection = () => {
 
     setIsSubmitting(true);
     setSubmitError(null);
-    
+
     try {
       // Client-side validation before sending to server
       // This reduces unnecessary API calls and provides immediate feedback
       if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
         throw new Error('Please fill in all required fields');
       }
-      
+
       // Email validation using regex pattern
       // Ensures the email format is valid before sending to backend
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -106,7 +106,7 @@ const ContactSection = () => {
       if (formData.message.trim().length > 2000) {
         throw new Error('Message is too long. Please keep it under 2000 characters');
       }
-      
+
       // Prepare payload for AWS Lambda function
       // The Lambda function expects this specific structure for SES integration
       const payload = {
@@ -119,11 +119,11 @@ const ContactSection = () => {
         userAgent: navigator.userAgent, // For analytics and spam detection
         referrer: document.referrer || 'direct' // Track where the user came from
       };
-      
+
       // Make API call to AWS API Gateway
       // This triggers the Lambda function that processes the form and sends email via SES
       console.log('Sending contact form submission to:', API_ENDPOINT);
-      
+
       const response = await fetch(API_ENDPOINT, {
         method: 'POST',
         headers: {
@@ -133,16 +133,16 @@ const ContactSection = () => {
         },
         body: JSON.stringify(payload)
       });
-      
+
       // Parse response from Lambda function
       // The Lambda function should return JSON with success status and message
       const result = await response.json();
-      
+
       if (!response.ok) {
         // Handle different types of HTTP errors from the backend
         // This provides specific error messages based on the response status
         let errorMessage = 'An error occurred while sending your message';
-        
+
         switch (response.status) {
           case 400:
             errorMessage = result.message || 'Invalid form data. Please check your inputs.';
@@ -156,20 +156,20 @@ const ContactSection = () => {
           default:
             errorMessage = result.message || `Server error: ${response.status}`;
         }
-        
+
         throw new Error(errorMessage);
       }
-      
+
       // Success: Update rate limiting timestamp and show success message
       setLastSubmission(now);
       setSubmitSuccess(true);
-      
+
       toast({
         title: "Message Sent Successfully!",
         description: "We'll get back to you within 24 hours. Thank you for contacting us!",
         className: "glass-panel border-green-100"
       });
-      
+
       // Reset form data after successful submission
       // This provides a clean slate for potential follow-up messages
       setFormData({
@@ -178,18 +178,18 @@ const ContactSection = () => {
         company: '',
         message: ''
       });
-      
+
       // Log successful submission for analytics
       console.log('Contact form submitted successfully:', result);
-      
+
     } catch (error) {
       // Comprehensive error handling for different failure scenarios
       console.error('Contact form submission error:', error);
-      
+
       // Extract user-friendly error message
       const errorMessage = error instanceof Error ? error.message : 'An unexpected error occurred';
       setSubmitError(errorMessage);
-      
+
       // Show user-friendly error toast notification
       toast({
         title: "Message Failed to Send",
@@ -197,7 +197,7 @@ const ContactSection = () => {
         className: "glass-panel border-red-100",
         variant: "destructive"
       });
-      
+
       // Log error details for debugging (in production, this would go to monitoring service)
       console.error('Detailed error information:', {
         error: errorMessage,
@@ -205,7 +205,7 @@ const ContactSection = () => {
         formData: { ...formData, message: '[REDACTED]' }, // Don't log sensitive message content
         apiEndpoint: API_ENDPOINT
       });
-      
+
     } finally {
       // Always reset loading state regardless of success or failure
       // This ensures the form doesn't get stuck in a loading state
@@ -240,15 +240,15 @@ const ContactSection = () => {
               <Mail className="h-4 w-4 mr-1" />
               Get in Touch
             </div>
-            
+
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Ready to Transform Your <span className="text-gradient">Digital Marketing</span>?
             </h2>
-            
+
             <p className="text-lg text-gray-600 mb-8">
               Let's discuss how our AI-powered solutions can help your business reach its full potential. Fill out the form and one of our specialists will get back to you within 24 hours.
             </p>
-            
+
             <div className="space-y-6">
               {contactMethods.map((method, index) => (
                 <a
@@ -269,7 +269,7 @@ const ContactSection = () => {
               ))}
             </div>
           </div>
-          
+
           <div className="reveal">
             <div className="glass-panel rounded-2xl p-8 shadow-lg">
               {submitError && (
@@ -277,7 +277,7 @@ const ContactSection = () => {
                   <p className="text-red-700 text-sm font-medium">{submitError}</p>
                 </div>
               )}
-              
+
               {submitSuccess && (
                 <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
                   <p className="text-green-700 text-sm font-medium">
@@ -303,7 +303,7 @@ const ContactSection = () => {
                     maxLength={100} // Prevent extremely long names
                   />
                 </div>
-                
+
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
                     Email Address *
@@ -321,7 +321,7 @@ const ContactSection = () => {
                     maxLength={254} // RFC 5321 email length limit
                   />
                 </div>
-                
+
                 <div>
                   <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1">
                     Company Name
@@ -337,7 +337,7 @@ const ContactSection = () => {
                     maxLength={100} // Reasonable company name length
                   />
                 </div>
-                
+
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
                     Message *
@@ -359,12 +359,11 @@ const ContactSection = () => {
                     minLength={10} // Ensure meaningful messages
                   />
                 </div>
-                
+
                 <Button
                   type="submit"
-                  className={`w-full bg-blue-600 text-white hover:bg-blue-700 rounded-lg py-6 transition-all ${
-                    isSubmitting ? 'opacity-90 cursor-not-allowed' : ''
-                  }`}
+                  className={`w-full bg-blue-600 text-white hover:bg-blue-700 rounded-lg py-6 transition-all ${isSubmitting ? 'opacity-90 cursor-not-allowed' : ''
+                    }`}
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? (
