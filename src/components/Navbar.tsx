@@ -2,11 +2,34 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  // Handle navigation to sections
+  const handleSectionClick = (sectionId: string) => {
+    if (location.pathname === '/') {
+      // Already on home page, just scroll to section
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // Navigate to home page and then scroll to section
+      navigate('/');
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
+    setIsMenuOpen(false);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,15 +59,15 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <Link to="/#services" className="text-sm font-medium hover:text-blue-600 transition-colors">Services</Link>
-          <Link to="/#about" className="text-sm font-medium hover:text-blue-600 transition-colors">About</Link>
-          <Link to="/#testimonials" className="text-sm font-medium hover:text-blue-600 transition-colors">Testimonials</Link>
-          <Link to="/#contact" className="text-sm font-medium hover:text-blue-600 transition-colors">Contact</Link>
-          <Link to="/#contact">
+          <button onClick={() => handleSectionClick('services')} className="text-sm font-medium hover:text-blue-600 transition-colors">Services</button>
+          <button onClick={() => handleSectionClick('about')} className="text-sm font-medium hover:text-blue-600 transition-colors">About</button>
+          <button onClick={() => handleSectionClick('testimonials')} className="text-sm font-medium hover:text-blue-600 transition-colors">Testimonials</button>
+          <button onClick={() => handleSectionClick('contact')} className="text-sm font-medium hover:text-blue-600 transition-colors">Contact</button>
+          <button onClick={() => handleSectionClick('contact')}>
             <Button className="bg-blue-600 text-white rounded-full px-5 hover:bg-blue-700 transition-all shadow-sm">
                Get started
             </Button>
-          </Link>
+          </button>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -60,15 +83,15 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <div className={`md:hidden absolute w-full bg-white shadow-lg transition-all duration-300 ease-smooth ${isMenuOpen ? 'max-h-[300px] opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>
         <div className="container px-4 py-4 mx-auto flex flex-col space-y-4">
-          <Link to="/#services" className="text-sm font-medium py-2 hover:text-blue-600 transition-colors" onClick={toggleMenu}>Services</Link>
-          <Link to="/#about" className="text-sm font-medium py-2 hover:text-blue-600 transition-colors" onClick={toggleMenu}>About</Link>
-          <Link to="/#testimonials" className="text-sm font-medium py-2 hover:text-blue-600 transition-colors" onClick={toggleMenu}>Testimonials</Link>
-          <Link to="/#contact" className="text-sm font-medium py-2 hover:text-blue-600 transition-colors" onClick={toggleMenu}>Contact</Link>
-          <Link to="/#contact">
-            <Button className="bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-all w-full" onClick={toggleMenu}>
+          <button onClick={() => handleSectionClick('services')} className="text-sm font-medium py-2 hover:text-blue-600 transition-colors text-left">Services</button>
+          <button onClick={() => handleSectionClick('about')} className="text-sm font-medium py-2 hover:text-blue-600 transition-colors text-left">About</button>
+          <button onClick={() => handleSectionClick('testimonials')} className="text-sm font-medium py-2 hover:text-blue-600 transition-colors text-left">Testimonials</button>
+          <button onClick={() => handleSectionClick('contact')} className="text-sm font-medium py-2 hover:text-blue-600 transition-colors text-left">Contact</button>
+          <button onClick={() => handleSectionClick('contact')}>
+            <Button className="bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-all w-full">
               Get Started
             </Button>
-          </Link>
+          </button>
         </div>
       </div>
     </header>
