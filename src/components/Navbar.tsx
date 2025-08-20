@@ -36,15 +36,15 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <a href="#services" className="text-sm font-medium hover:text-blue-600 transition-colors">Services</a>
-          <a href="#about" className="text-sm font-medium hover:text-blue-600 transition-colors">About</a>
-          <a href="#testimonials" className="text-sm font-medium hover:text-blue-600 transition-colors">Testimonials</a>
-          <a href="#contact" className="text-sm font-medium hover:text-blue-600 transition-colors">Contact</a>
-          <a href="#contact">
+          <Link to="/#services" className="text-sm font-medium hover:text-blue-600 transition-colors">Services</Link>
+          <Link to="/#about" className="text-sm font-medium hover:text-blue-600 transition-colors">About</Link>
+          <Link to="/#testimonials" className="text-sm font-medium hover:text-blue-600 transition-colors">Testimonials</Link>
+          <Link to="/#contact" className="text-sm font-medium hover:text-blue-600 transition-colors">Contact</Link>
+          <Link to="/#contact">
             <Button className="bg-blue-600 text-white rounded-full px-5 hover:bg-blue-700 transition-all shadow-sm">
                Get started
             </Button>
-          </a>
+          </Link>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -60,15 +60,15 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <div className={`md:hidden absolute w-full bg-white shadow-lg transition-all duration-300 ease-smooth ${isMenuOpen ? 'max-h-[300px] opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>
         <div className="container px-4 py-4 mx-auto flex flex-col space-y-4">
-          <a href="#services" className="text-sm font-medium py-2 hover:text-blue-600 transition-colors" onClick={toggleMenu}>Services</a>
-          <a href="#about" className="text-sm font-medium py-2 hover:text-blue-600 transition-colors" onClick={toggleMenu}>About</a>
-          <a href="#testimonials" className="text-sm font-medium py-2 hover:text-blue-600 transition-colors" onClick={toggleMenu}>Testimonials</a>
-          <a href="#contact" className="text-sm font-medium py-2 hover:text-blue-600 transition-colors" onClick={toggleMenu}>Contact</a>
-          <a href="#contact">
+          <Link to="/#services" className="text-sm font-medium py-2 hover:text-blue-600 transition-colors" onClick={toggleMenu}>Services</Link>
+          <Link to="/#about" className="text-sm font-medium py-2 hover:text-blue-600 transition-colors" onClick={toggleMenu}>About</Link>
+          <Link to="/#testimonials" className="text-sm font-medium py-2 hover:text-blue-600 transition-colors" onClick={toggleMenu}>Testimonials</Link>
+          <Link to="/#contact" className="text-sm font-medium py-2 hover:text-blue-600 transition-colors" onClick={toggleMenu}>Contact</Link>
+          <Link to="/#contact">
             <Button className="bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-all w-full" onClick={toggleMenu}>
               Get Started
             </Button>
-          </a>
+          </Link>
         </div>
       </div>
     </header>
