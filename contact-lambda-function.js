@@ -405,13 +405,14 @@ This message was sent from your website contact form.
  *        ]
  *    }
  * 
- * 4. API Gateway Setup:
- *    - Create new REST API
- *    - Create POST method pointing to Lambda function
- *    - Enable CORS with appropriate origins
- *    - Deploy API and note the endpoint URL
+ * 4. Lambda Function URL Setup:
+ *    - Go to Lambda function Configuration → Function URL
+ *    - Create function URL with CORS enabled
+ *    - Set Auth type to NONE (for public access)
+ *    - Configure CORS: Origins=*, Methods=POST,OPTIONS, Headers=*
+ *    - Copy the function URL (ends with .lambda-url.region.on.aws/)
  * 
  * 5. Frontend Configuration:
- *    - Set VITE_API_GATEWAY_URL environment variable to your API endpoint
+ *    - Set VITE_LAMBDA_FUNCTION_URL environment variable to your function URL
  *    - Test the integration end-to-end
  */

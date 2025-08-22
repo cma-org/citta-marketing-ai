@@ -44,10 +44,10 @@ const ContactSection = () => {
   const [lastSubmission, setLastSubmission] = useState<number>(0);
   const SUBMISSION_COOLDOWN = 30000; // 30 seconds between submissions
 
-  // Environment variable for API Gateway endpoint
+  // Environment variable for Lambda Function URL
   // This should be configured in your deployment environment
-  // Example: https://your-api-id.execute-api.us-east-1.amazonaws.com/prod/contact
-  const API_ENDPOINT = import.meta.env.VITE_API_GATEWAY_URL || 'https://your-api-gateway-url.com/contact';
+  // Example: https://abc123def456.lambda-url.us-east-1.on.aws/
+  const API_ENDPOINT = import.meta.env.VITE_LAMBDA_FUNCTION_URL || 'https://your-lambda-function-url.lambda-url.region.on.aws/';
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -120,7 +120,7 @@ const ContactSection = () => {
         referrer: document.referrer || 'direct' // Track where the user came from
       };
 
-      // Make API call to AWS API Gateway
+      // Make API call to AWS Lambda Function URL
       // This triggers the Lambda function that processes the form and sends email via SES
       console.log('Sending contact form submission to:', API_ENDPOINT);
 
