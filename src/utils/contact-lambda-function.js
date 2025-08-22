@@ -2,6 +2,7 @@
 /**
  * AWS Lambda function for handling contact form submissions
  * This function integrates with Amazon SES to send emails
+ * Uses Lambda Function URL for direct invocation (no API Gateway required)
  * 
  * DEPLOYMENT INSTRUCTIONS:
  * 1. Create a new Lambda function in AWS Console
@@ -9,8 +10,8 @@
  * 3. Copy this code into the Lambda function
  * 4. Configure environment variables (see below)
  * 5. Add appropriate IAM permissions for SES
- * 6. Create API Gateway endpoint pointing to this function
- * 7. Enable CORS in API Gateway
+ * 6. Enable Lambda Function URL with CORS
+ * 7. Configure CORS for your domain origins
  */
 
 const AWS = require('aws-sdk');
@@ -30,7 +31,7 @@ const ses = new AWS.SES({
  */
 
 exports.handler = async (event) => {
-    // Configure CORS headers for browser compatibility
+    // Configure CORS headers for Lambda Function URL
     // These headers allow the frontend to make requests to this Lambda function
     const allowedOrigins = (process.env.ALLOWED_ORIGINS || '').split(',');
     const origin = event.headers?.origin || event.headers?.Origin;
@@ -45,7 +46,7 @@ exports.handler = async (event) => {
     
     try {
         // Handle preflight OPTIONS request for CORS
-        if (event.httpMethod === 'OPTIONS') {
+        if (event.requestContext?.http?.method === 'OPTIONS') {
             return {
                 statusCode: 200,
                 headers,
@@ -54,7 +55,7 @@ exports.handler = async (event) => {
         }
         
         // Only allow POST requests for form submissions
-        if (event.httpMethod !== 'POST') {
+        if (event.requestContext?.http?.method !== 'POST') {
             return {
                 statusCode: 405,
                 headers,
@@ -341,7 +342,7 @@ This message was sent from your website contact form.
             stack: error.stack,
             timestamp: new Date().toISOString(),
             event: {
-                httpMethod: event.httpMethod,
+                httpMethod: event.requestContext?.http?.method,
                 origin: event.headers?.origin,
                 userAgent: event.headers?.['User-Agent']
             }
@@ -405,13 +406,13 @@ This message was sent from your website contact form.
  *        ]
  *    }
  * 
- * 4. API Gateway Setup:
- *    - Create new REST API
- *    - Create POST method pointing to Lambda function
- *    - Enable CORS with appropriate origins
- *    - Deploy API and note the endpoint URL
+ * 4. Lambda Function URL Setup:
+ *    - Enable Lambda Function URL in the console
+ *    - Set Auth Type to NONE for public access
+ *    - Configure CORS settings for your domain
+ *    - Copy the generated Function URL
  * 
  * 5. Frontend Configuration:
- *    - Set VITE_API_GATEWAY_URL environment variable to your API endpoint
+ *    - Set VITE_LAMBDA_FUNCTION_URL environment variable to your Function URL
  *    - Test the integration end-to-end
  */
