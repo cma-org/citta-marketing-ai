@@ -1,13 +1,13 @@
 
 # Contact Form Integration Setup Guide
 
-This guide provides step-by-step instructions for setting up the contact form integration with Amazon SES.
+This guide provides step-by-step instructions for setting up the contact form integration with Amazon SES using Lambda Function URL.
 
 ## Prerequisites
 
 - AWS Account with appropriate permissions
 - Domain verified in Amazon SES (or sandbox mode for testing)
-- Basic knowledge of AWS Lambda and API Gateway
+- Basic knowledge of AWS Lambda
 
 ## Step 1: Amazon SES Setup
 
@@ -89,51 +89,42 @@ ALLOWED_ORIGINS=https://cittamarketingagency.in,https://www.cittamarketingagency
 3. Click on the execution role
 4. Attach the policy created above
 
-## Step 4: API Gateway Setup
+## Step 4: Lambda Function URL Setup
 
-### 4.1 Create REST API
-1. Go to API Gateway Console
-2. Click "Create API"
-3. Choose "REST API" (not private)
-4. API name: `contact-form-api`
-5. Click "Create API"
+### 4.1 Enable Function URL
+1. Go to your Lambda function in AWS Console
+2. Click "Configuration" tab
+3. Select "Function URL" from the left menu
+4. Click "Create function URL"
 
-### 4.2 Create Resource and Method
-1. Click "Actions" > "Create Resource"
-2. Resource name: `contact`
-3. Resource path: `/contact`
-4. Click "Create Resource"
-5. Select the `/contact` resource
-6. Click "Actions" > "Create Method"
-7. Choose "POST"
-8. Integration type: Lambda Function
-9. Select your Lambda function
-10. Click "Save"
+### 4.2 Configure Function URL
+1. **Auth type**: NONE (for public access)
+2. **Invoke mode**: BUFFERED (default)
+3. Click "Save"
 
-### 4.3 Enable CORS
-1. Select the `/contact` resource
-2. Click "Actions" > "Enable CORS"
-3. Access-Control-Allow-Origin: `*` (or specific domains)
-4. Access-Control-Allow-Headers: `Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Requested-With`
-5. Access-Control-Allow-Methods: `POST,OPTIONS`
-6. Click "Enable CORS and replace existing CORS headers"
+### 4.3 Configure CORS
+1. In the Function URL configuration, expand "Cross-origin resource sharing (CORS)"
+2. Configure the following:
+   - **Allow origin**: `*` (or specify your domains like `https://cittaai.com`)
+   - **Allow headers**: `content-type, x-requested-with`
+   - **Allow methods**: `POST, OPTIONS`
+   - **Max age**: `86400` (optional, for caching preflight requests)
+3. Click "Save"
 
-### 4.4 Deploy API
-1. Click "Actions" > "Deploy API"
-2. Deployment stage: `prod`
-3. Click "Deploy"
-4. Note the "Invoke URL" - this is your API endpoint
+### 4.4 Copy Function URL
+- Copy the generated Function URL (ends with `.lambda-url.region.on.aws/`)
+- This is your endpoint for the contact form
 
 ## Step 5: Frontend Configuration
 
 ### 5.1 Set Environment Variable
-Create or update your `.env` file (this would be in your deployment environment):
+Create or update your environment configuration (this would be in your deployment environment):
 
 ```
-VITE_API_GATEWAY_URL=https://your-api-id.execute-api.us-east-1.amazonaws.com/prod/contact
+VITE_LAMBDA_FUNCTION_URL=https://abc123def456.lambda-url.us-east-1.on.aws/
 ```
 
-Replace with your actual API Gateway URL from Step 4.4.
+Replace with your actual Lambda Function URL from Step 4.4.
 
 ### 5.2 Test Integration
 1. Deploy your frontend application
@@ -152,7 +143,7 @@ Replace with your actual API Gateway URL from Step 4.4.
 
 ### 6.2 Monitor Logs
 - Lambda function logs in CloudWatch
-- API Gateway access logs
+- Lambda Function URL access logs
 - SES sending statistics
 
 ### 6.3 Error Handling
@@ -168,7 +159,7 @@ Replace with your actual API Gateway URL from Step 4.4.
 
 3. **CORS Configuration**: Restrict CORS to specific domains in production.
 
-4. **API Authentication**: Consider adding API keys or other authentication for additional security.
+4. **Function URL Security**: Consider implementing authentication if additional security is needed.
 
 5. **Email Content**: Auto-replies and notifications are sanitized to prevent XSS.
 
@@ -181,7 +172,7 @@ Replace with your actual API Gateway URL from Step 4.4.
    - If in sandbox mode, verify recipient emails too
 
 2. **CORS errors**
-   - Check API Gateway CORS configuration
+   - Check Lambda Function URL CORS configuration
    - Ensure frontend origin is in ALLOWED_ORIGINS
 
 3. **Lambda timeout errors**
@@ -202,7 +193,7 @@ Replace with your actual API Gateway URL from Step 4.4.
 1. Check CloudWatch logs for Lambda function
 2. Test Lambda function directly with test events
 3. Verify SES sending statistics
-4. Test API Gateway endpoint with tools like Postman
+4. Test Lambda Function URL with tools like Postman
 5. Check browser network tab for frontend requests
 
 ## Maintenance
@@ -212,19 +203,19 @@ Replace with your actual API Gateway URL from Step 4.4.
 - Review CloudWatch logs for errors
 - Update Lambda function dependencies
 - Review and update CORS origins
-- Monitor API Gateway usage
+- Monitor Lambda Function URL usage
 
 ### Scaling Considerations
 - SES sending limits may need increases
 - Lambda concurrent execution limits
-- API Gateway throttling limits
+- Lambda Function URL has no additional throttling limits
 - Consider DLQ for failed email attempts
 
 ## Cost Optimization
 
 - SES: $0.10 per 1,000 emails
 - Lambda: Very low for contact form usage
-- API Gateway: $3.50 per million requests
+- Lambda Function URL: No additional charges beyond Lambda
 - CloudWatch Logs: Monitor retention settings
 
-Total estimated cost for typical contact form usage: < $5/month
+Total estimated cost for typical contact form usage: < $3/month (no API Gateway costs)
