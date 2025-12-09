@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const socialLinks = [
   { icon: Twitter, href: "https://twitter.com/cittaai", label: "Twitter" },
   { icon: Facebook, href: "https://facebook.com/cittaai", label: "Facebook" },
-  { icon: Instagram, href: "https://www.instagram.com/citta.ai", label: "Instagram" },
+  { icon: Instagram, href: "https://www.instagram.com/citta.ai/", label: "Instagram" },
   { icon: Linkedin, href: "https://linkedin.com/company/cittaai", label: "LinkedIn" },
 ];
 
