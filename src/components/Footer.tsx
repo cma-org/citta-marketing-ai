@@ -1,41 +1,100 @@
-
-import React from 'react';
-import { Facebook, Instagram, Linkedin, Twitter, Mail, PhoneCall } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Facebook, Instagram, Linkedin, Twitter, Mail, PhoneCall } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const socialLinks = [
-  { icon: Twitter, href: 'https://twitter.com/cittaai', label: 'Twitter' },
-  { icon: Facebook, href: 'https://facebook.com/cittaai', label: 'Facebook' },
-  { icon: Instagram, href: 'https://instagram.com/cittaai', label: 'Instagram' },
-  { icon: Linkedin, href: 'https://linkedin.com/company/cittaai', label: 'LinkedIn' }
+  { icon: Twitter, href: "https://twitter.com/cittaai", label: "Twitter" },
+  { icon: Facebook, href: "https://facebook.com/cittaai", label: "Facebook" },
+  { icon: Instagram, href: "https://www.instagram.com/citta.ai/", label: "Instagram" },
+  { icon: Linkedin, href: "https://linkedin.com/company/cittaai", label: "LinkedIn" },
 ];
 
 const companyLinks = [
-  { label: 'About Us', href: '/about', content: 'Learn about our company mission, vision, and the team behind CittaAI.' },
-  { label: 'Our Team', href: '/team', content: 'Meet our expert team of AI specialists, marketers, and data scientists.' },
-  { label: 'Careers', href: '/careers', content: 'Join our talented team and help shape the future of AI-driven marketing.' },
-  { label: 'Blog', href: '/blog', content: 'Explore our latest insights on AI marketing trends and strategies.' }
+  {
+    label: "About Us",
+    href: "/about",
+    content: "Learn about our company mission, vision, and the team behind CittaAI.",
+  },
+  {
+    label: "Our Team",
+    href: "/team",
+    content: "Meet our expert team of AI specialists, marketers, and data scientists.",
+  },
+  {
+    label: "Careers",
+    href: "/careers",
+    content: "Join our talented team and help shape the future of AI-driven marketing.",
+  },
+  { label: "Blog", href: "/blog", content: "Explore our latest insights on AI marketing trends and strategies." },
 ];
 
 const serviceLinks = [
-  { label: 'AI Marketing', href: '/services/branding-strategy', content: 'Leverage AI to create powerful branding strategies for your business.' },
-  { label: 'SEO Optimization', href: '/services/seo-services', content: 'Improve your search rankings with our AI-powered SEO solutions.' },
-  { label: 'Content Creation', href: '/services/content-creation', content: 'Generate engaging, SEO-optimized content with our AI tools.' },
-  { label: 'Analytics', href: '/services/business-automation', content: 'Gain valuable insights with advanced AI-powered analytics.' }
+  {
+    label: "AI Marketing",
+    href: "/services/branding-strategy",
+    content: "Leverage AI to create powerful branding strategies for your business.",
+  },
+  {
+    label: "SEO Optimization",
+    href: "/services/seo-services",
+    content: "Improve your search rankings with our AI-powered SEO solutions.",
+  },
+  {
+    label: "Content Creation",
+    href: "/services/content-creation",
+    content: "Generate engaging, SEO-optimized content with our AI tools.",
+  },
+  {
+    label: "Analytics",
+    href: "/services/business-automation",
+    content: "Gain valuable insights with advanced AI-powered analytics.",
+  },
 ];
 
 const resourceLinks = [
-  { label: 'Case Studies', href: '/showcase', content: 'Explore our client success stories and real-world applications of our services.' },
-  { label: 'Documentation', href: '/resources/documentation', content: 'Access comprehensive guides and resources for our AI marketing tools.' },
-  { label: 'Help Center', href: '/help-center', content: 'Find answers to common questions and get support for our services.' },
-  { label: 'API', href: '/developers/api', content: 'Technical documentation for developers integrating with our AI marketing platform.' }
+  {
+    label: "Case Studies",
+    href: "/showcase",
+    content: "Explore our client success stories and real-world applications of our services.",
+  },
+  {
+    label: "Documentation",
+    href: "/resources/documentation",
+    content: "Access comprehensive guides and resources for our AI marketing tools.",
+  },
+  {
+    label: "Help Center",
+    href: "/help-center",
+    content: "Find answers to common questions and get support for our services.",
+  },
+  {
+    label: "API",
+    href: "/developers/api",
+    content: "Technical documentation for developers integrating with our AI marketing platform.",
+  },
 ];
 
 const legalLinks = [
-  { label: 'Privacy Policy', href: '/legal/privacy-policy', content: 'Learn how we collect, use, and protect your personal information.' },
-  { label: 'Terms of Service', href: '/legal/terms-of-service', content: 'Understand the terms and conditions for using our services.' },
-  { label: 'Security', href: '/legal/security', content: 'Discover our commitment to keeping your data safe and secure.' },
-  { label: 'Cookies', href: '/legal/cookies', content: 'Information about how we use cookies and similar technologies.' }
+  {
+    label: "Privacy Policy",
+    href: "/legal/privacy-policy",
+    content: "Learn how we collect, use, and protect your personal information.",
+  },
+  {
+    label: "Terms of Service",
+    href: "/legal/terms-of-service",
+    content: "Understand the terms and conditions for using our services.",
+  },
+  {
+    label: "Security",
+    href: "/legal/security",
+    content: "Discover our commitment to keeping your data safe and secure.",
+  },
+  {
+    label: "Cookies",
+    href: "/legal/cookies",
+    content: "Information about how we use cookies and similar technologies.",
+  },
 ];
 
 const Footer = () => {
@@ -48,10 +107,13 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
             <div className="md:col-span-4">
               <div className="mb-6">
-                <span className="font-display text-2xl font-bold">Citta<span className="text-blue-100">AI</span></span>
+                <span className="font-display text-2xl font-bold">
+                  Citta<span className="text-blue-100">AI</span>
+                </span>
               </div>
               <p className="text-blue-100 max-w-xs mb-6">
-                Transforming digital marketing with artificial intelligence and data-driven strategies for the modern age.
+                Transforming digital marketing with artificial intelligence and data-driven strategies for the modern
+                age.
               </p>
               <div className="flex space-x-4">
                 {socialLinks.map((social, index) => (
@@ -140,9 +202,7 @@ const Footer = () => {
 
         <div className="border-t border-blue-500/30 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-blue-100 text-sm">
-              © {currentYear} CittaAI. All rights reserved.
-            </p>
+            <p className="text-blue-100 text-sm">© {currentYear} CittaAI. All rights reserved.</p>
             <div className="mt-4 md:mt-0">
               <ul className="flex space-x-6 text-sm">
                 <li>
